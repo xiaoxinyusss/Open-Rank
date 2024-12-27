@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <!--width=device-width使页面宽度等于设备屏幕宽度,initial-scale=1.0使页面以其实际大小显示-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- 头部模块 -->
+    <div class="header">
+        <div class="title">
+            <span>开源项目技术趋势与影响力分析</span>
+        </div>
+        <div class="time">
+            <span></span>
+        </div>
+        <div class="company">
+            <span>队名：</span>
+            <span>做完开派队</span>
+        </div>
+    </div>
+
+    <!-- 主题模块 -->
+    <div class="main">
+        <div class="animate">
+            <!-- 浮动层 -->
+            <div class="float">
+                <div class="floating1">
+                    <div id="roate1">
+                        <div class="roate-item">
+                            <p></p>
+                            <span>云原生</span>
+                        </div>
+                    </div>
+                    <p class="pm">NO.1</p>
+                </div>
+                <div class="floating2">
+                    <div id="roate2">
+                        <div class="roate-item2">
+                            <p></p>
+                            <span>数据库</span>
+                        </div>
+                    </div>
+                    <p class="pm2">NO.2</p>
+                </div>
+                <div class="floating3">
+                    <div id="roate3">
+                        <div class="roate-item3">
+                            <p></p>
+                            <span>人工智能</span>
+                        </div>
+                    </div>
+                    <p class="pm3">NO.3</p>
+                </div>
+                <div class="floating4">
+                    <div id="roate4">
+                        <div class="roate-item4">
+                            <p></p>
+                            <span>大数据</span>
+                        </div>
+                    </div>
+                    <p class="pm4">NO.4</p>
+                </div>
+                <div class="floating5">
+                    <div id="roate5">
+                        <div class="roate-item5">
+                            <p></p>
+                            <span>前端</span>
+                        </div>
+                    </div>
+                    <p class="pm5">NO.5</p>
+                </div>
+
+            </div>
+            <div class="sum">
+                <div class="data">
+                    <p>总数据量(GitHub)</p>
+                    <span>392001</span>
+                </div>
+                <div class="cicle1"></div>
+                <canvas id="canvas1"></canvas>
+                <canvas id="canvas2"></canvas>
+                <div class="data1">
+                    <div class="qiu">
+                        <p>操作系统</p>
+                    </div>
+                    <span>NO.6</span>
+                </div>
+                <div class="data2">
+                    <div class="qiu">
+                        <p>区块链</p>
+                    </div>
+                    <span>NO.7</span>
+                </div>
+                <div class="data3">
+                    <div class="qiu">
+                        <p>物联网</p>
+                    </div>
+                    <span>NO.8</span>
+                </div>
+                <div class="data4">
+                    <div class="qiu">
+                        <p>其他</p>
+                    </div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!-- HTML 结构 -->
+        <div class="charts">
+            <div class="charts1">
+                <div class="charts-title">
+                    <span>各领域仓库数量统计</span>
+                </div>
+                <div class="charts-content1 content">
+                    <canvas id="myDoughnutChart"></canvas> <!-- 添加canvas元素 -->
+                </div>
+            </div>
+            <!-- 添加按钮 -->
+            <div class="charts-buttons">
+                <a href="https://github.com/your-repository-link" target="_blank">
+                    <button class="btn-github">查看 GitHub 详细分析</button>
+                </a>
+                
+                <a href="https://gitee.com/your-repository-link" target="_blank">
+                    <button class="btn-gitee">查看 Gitee 详细分析</button>
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 引入 Chart.js 库 -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- 绘制环状饼图 -->
+        <script type="text/javascript" src="js/circle_table.js"></script>
+    </div>
+
+</body>
+
+</html>
