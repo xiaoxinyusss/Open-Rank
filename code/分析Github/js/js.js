@@ -113,7 +113,9 @@ option = {
 function echarts_4() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart4'));
+        var myChart66 = echarts.init(document.getElementById('echart66'));
         var myChart2 = echarts.init(document.getElementById('echart3'));
+        var myChart88 = echarts.init(document.getElementById('echart88'));
 option = {
     tooltip: {
         trigger: 'axis',
@@ -332,10 +334,121 @@ option2 = {
     },
 	]
 };
+option3 = {
+    //  backgroundColor: '#00265f',
+      tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+              type: 'shadow'
+          }
+      },
+      legend: {
+          data: ['2017年', '2018年'],
+          top:'5%',
+          textStyle: {
+              color: "#fff",
+              fontSize: '12',
+  
+          },
+   
+          itemGap: 35
+      },
+      grid: {
+          left: '0%',
+          top:'40px',
+          right: '0%',
+          bottom: '0',
+         containLabel: true
+      },
+      xAxis: [{
+          type: 'category',
+                data: ['1月', '2月', '3月', '4月', '5月', '6月'],
+          axisLine: {
+              show: true,
+           lineStyle: {
+                  color: "rgba(255,255,255,.1)",
+                  width: 1,
+                  type: "solid"
+              },
+          },
+          axisTick: {
+              show: false,
+          },
+          axisLabel:  {
+                  interval: 0,
+                 // rotate:50,
+                  show: true,
+                  splitNumber: 5,
+                  textStyle: {
+                       color: "rgba(255,255,255,.6)",
+                      fontSize: '12',
+                  },
+              },
+      }],
+      yAxis: [{
+          type: 'value',
+          axisLabel: {
+             //formatter: '{value} %'
+              show:true,
+               textStyle: {
+                       color: "rgba(255,255,255,.6)",
+                      fontSize: '12',
+                  },
+          },
+          axisTick: {
+              show: false,
+          },
+          axisLine: {
+              show: true,
+              lineStyle: {
+                  color: "rgba(255,255,255,.1	)",
+                  width: 1,
+                  type: "solid"
+              },
+          },
+          splitLine: {
+              lineStyle: {
+                 color: "rgba(255,255,255,.1)",
+              }
+          }
+      }],
+      series: [{
+          name: '2017年',
+          type: 'line',
+   smooth: true,
+          data: [2, 6, 3, 8, 5, 8],
+  
+          itemStyle: {
+              normal: {
+                  color:'#2f89cf',
+                  opacity: 1,
+                  
+                  barBorderRadius: 5,
+              }
+          }
+      }, {
+          name: '2018年',
+          type: 'line',
+           smooth: true,
+          data: [5, 2, 6, 4, 5, 12],
+          barWidth:'15',
+         // barGap: 1,
+          itemStyle: {
+              normal: {
+                  color:'#62c98d',
+                  opacity: 1,
+                  barBorderRadius: 5,
+              }
+          }
+      },
+      ]
+  };
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option2);
+        myChart.setOption(option2);   //activity
+        myChart66.setOption(option3); //openrank
         myChart2.setOption(option);
+        myChart88.setOption(option); //柱状图
         window.addEventListener("resize",function(){
             myChart.resize();
         });
