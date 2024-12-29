@@ -1,0 +1,290 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Gitee开源项目分析</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript" src="js/china.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/Bubble.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="head clearfix">
+
+
+	<h1 class="pulll_middle">Gitee开源项目分析</h1>
+		<div class="menu menu2 pulll_left">
+		<ul>      
+		</ul>
+		</div>
+		
+		<div class="time" id="showTime">2018/6/12 17:00:12</div>
+		<script>
+var t = null;
+    t = setTimeout(time,1000);//開始运行
+    function time()
+    {
+       clearTimeout(t);//清除定时器
+       dt = new Date();
+		var y=dt.getFullYear();
+		var mt=dt.getMonth()+1;
+		var day=dt.getDate();
+       var h=dt.getHours();//获取时
+       var m=dt.getMinutes();//获取分
+       var s=dt.getSeconds();//获取秒
+       document.getElementById("showTime").innerHTML = y+"/"+mt+"/"+day+" "+h+":"+m+":"+s+"";
+       t = setTimeout(time,1000); //设定定时器，循环运行     
+    } 
+
+</script>
+	</div>
+	<div class="mainbox">
+		<style>
+			/* 增大行间距 */
+			.table1 tr {
+			  height: 43px; /* 设置行高 */
+			}
+		
+			.table1 td, .table1 th {
+			  padding: 3px; /* 为单元格添加内边距 */
+			}
+		  </style>
+	<ul class="clearfix nav1">
+		<li style="width: 22%">
+		<div class="box">
+			<div class="tit">    OpenRank季排行Top10</div>
+			<div class="boxnav" style="height: 508px;">
+<table class="table1" width="100%" border="0" cellspacing="0" cellpadding="0" >
+	<tbody>
+		<tr>
+			<th>排名</th>
+			<th>repo_name</th>
+			<th>2024Q3</th>
+			<th>增长率</th>
+	
+		 
+		</tr>
+		<tr>
+		  <td>1</td>
+		  <td>NixOS/nixpkgs</td>
+		  <td><span class="text-b">5958.77</span></td>
+		  <td><div class="text-d">↑5.00%</div></td>
+		</tr>
+		  <tr>
+		  <td>2</td>
+		  <td>llvm/llvm-project</td>
+		  <td><span class="text-b">5262.33</span></td>
+		  <td><div class="text-s">↑5.53%</div></td>
+		</tr>
+			 <tr>
+		  <td>3</td>
+		  <td>home-assistant/core</td>
+		  <td><span class="text-b">3066.35</span></td>
+		  <td><div class="text-d">↓6.67%</div></td>
+		</tr>
+		  <tr>
+		  <td>4</td>
+		  <td>digital/dio-lab-open-source</td>
+		  <td><span class="text-b">2986.23</span></td>
+		  <td><div class="text-s">↓31.78%</div></td>
+		</tr>
+			 <tr>
+		  <td>5</td>
+		  <td>pytorch/pytorch</td>
+		  <td><span class="text-b">2900.35</span></td>
+		  <td><div class="text-d">↑3.26%</div></td>
+		</tr>
+		  <tr>
+			<td>6</td>
+			<td>microsoft/vscode</td>
+			<td><span class="text-b">2801.28</span></td>
+			<td><div class="text-d">↑8.29%</div></td>
+		  </tr>
+			<tr>
+			<td>7</td>
+			<td>odoo/odoo</td>
+			<td><span class="text-b">2640.43</span></td>
+			<td><div class="text-s">↑1.96%</div></td>
+		  </tr>
+			   <tr>
+			<td>8</td>
+			<td>zephyrproject-rtos/zephyr</td>
+			<td><span class="text-b">2116</span></td>
+			<td><div class="text-d">↑0.002%</div></td>
+		  </tr>
+			<tr>
+			<td>9</td>
+			<td>godotengine/godot</td>
+			<td><span class="text-b">1968.68</span></td>
+			<td><div class="text-s">↑3.65%</div></td>
+		  </tr>
+			   <tr>
+			<td>10</td>
+			<td>elastic/kibana</td>
+			<td><span class="text-b">1849.84</span></td>
+			<td><div class="text-d">↓0.67%</div></td>
+		  </tr>		  
+	  </tbody>
+</table>
+			</div>
+			</div>
+
+			<div class="boxnav" style="height: 0px;">
+				<div class="" style="height: 0px" id="echart1"></div>
+				<div class="leidanav">
+			</div>
+			</div>
+		</li>
+		<li style="width: 56%">
+		
+		<div class="box">
+			<div class="boxnav mapc" style="height: 550px; position: relative">
+				<div class="mapnav">
+				<ul>
+					<li><div><span>数据1</span><p>40%</p></div></li>
+					<li><div><span>数据2</span><p>12%</p></div></li>
+					<li><div><span>数据3</span><p>80</p></div></li>
+					<li><div><span>数据4</span><p>124</p></div></li>
+					<li><div><span>数据5</span><p>10%</p></div></li>
+					</ul>
+				</div>
+				<div class="mapnav2">
+				
+				<div class="box">
+			<div class="tit">版块标题</div>
+			<div class="boxnav" style="height: 130px;" id="sysx">
+				
+				
+				</div>
+					<div class="leidanav leidanav3" style="margin-bottom: 15px;">
+				<ul class="clearfix">
+					<li><span>业务笔数</span><p>128</p></li>
+					<li><span>业务收益</span><p>100</p></li>
+					<li><span>业务笔数</span><p>28</p></li>
+					<li><span>业务收益</span><p>28</p></li>
+					</ul>
+				</div>
+					
+					</div>
+				</div>
+			<div class="map" id="map"></div>
+				
+				<script>
+				$(".mapbtn a").hover(function(){
+					var ind=$(this).index()
+					$(".mapnav ul").eq(ind).show().siblings().hide()
+				})
+				</script>
+			</div>
+			</div>
+		
+		</li>
+		<li style="width: 22%">
+		
+		<div class="box">
+			<div class="tit">版块标题</div>
+			<div class="boxnav" id="echart3" style="height: 200px;">
+			
+			</div>
+			</div>
+			<div class="box">
+			<div class="tit">版块标题</div>
+			<div class="boxnav" style="height: 250px;">
+				<div style="height: 200px; float: left; width: 40%; padding: 0 5px;">
+				<div class="tit02 text-b">热门话题榜</div>
+					<div class="huati">
+					<ul>
+						<li>1.数据分析  <span class="text-s">↑2167</span></li>
+						<li>2.云存储     <span class="text-s">↑2167</span></li>
+						<li>3.视觉分析   <span class="text-d">↓2167</span></li>
+						<li>4.海量词库   <span class="text-d">↓2167</span></li>
+						<li>5.云词典      <span class="text-d">↓2167</span></li>
+						</ul>
+					</div>
+				</div>
+			
+			<div style="height: 200px; float: left; width: 60%">
+				
+<div class="text-b tit02" style="text-align: center;">关键词 — 云</div>
+    <div class="tagcloud">
+      <!-- bo大小 co颜色 -->
+      <a class="b01 co01" href="https://gitee.com/iGaoWei/big-data-view">大数据</a>
+      <a class="b02 co02" href="https://gitee.com/iGaoWei/big-data-view">大数据</a>
+      <a class="b03 co05" href="https://gitee.com/iGaoWei/big-data-view">大数据</a>
+      <a class="b04 co02" href="https://gitee.com/iGaoWei/big-data-view">大数据</a>
+      <a class="b03 co05" href="https://gitee.com/iGaoWei/big-data-view">大数据</a>
+    </div>
+<script type="text/javascript">
+    /*3D标签云*/
+    tagcloud({
+        selector: ".tagcloud",  //元素选择器
+        fontsize: 6,       //基本字体大小, 单位px
+        radius: 40,         //滚动半径, 单位px 页面宽度和高度的五分之一
+        mspeed: "slow",   //滚动最大速度, 取值: slow, normal(默认), fast
+        ispeed: "slow",   //滚动初速度, 取值: slow, normal(默认), fast
+        direction: 0,     //初始滚动方向, 取值角度(顺时针360): 0对应top, 90对应left, 135对应right-bottom(默认)...
+        keep: false          //鼠标移出组件后是否继续随鼠标滚动, 取值: false, true(默认) 对应 减速至初速度滚动, 随鼠标滚动
+    });
+</script>
+				</div>
+			</div>
+			</div>
+		
+		</li>
+		</ul>
+		
+		<div class="box" style="padding: 20px 0;">
+		<ul class="clearfix nav2 ">
+		<li style="width:25%"><div class="tit01">版块标题</div>
+			<div class="" id="">
+			<div style="float: left; width: 50%; height: 170px" id="fb01"></div>
+			<div style="float: left; width: 50%; height: 170px"  id="fb02"></div>
+				
+			</div>
+			<div class="leidanav leidanav2">
+				<ul class="clearfix">
+					<li><span>总人数</span><p>128</p></li>
+					<li><span>男职员</span><p>100</p></li>
+					<li><span>女职员</span><p>28</p></li>
+		
+					</ul>
+				</div>
+			</li>
+		<li style="width:25%"><div class="tit01">版块标题</div>
+			<div class="ftechart" id="echart4"></div>
+			</li>
+		<li style="width:25%"><div class="tit01">版块标题</div>
+			<div class="" style="height:100%;display: flex; align-items: center;">
+			<div style="float: left; width: 50%; height: 100%" class="wancheng">
+				<div><span>已完成人数</span>
+				<h3>1835<i>人</i></h3></div>
+				<div class="yuan">
+				<span>19%</span>
+				</div>
+				</div>
+			<div style="float: left; width: 50%; height: 50%" id="myd1"></div>
+
+			
+				
+			</div>
+			
+			</li>
+		<li style="width:25%"><div class="tit01">版块标题</div>
+			
+			<div class="" id="">
+			<div style="float: left; width: 50%; height: 200px" id="fb03"></div>
+			<div style="float: left; width: 50%; height: 200px"  id="fb04"></div>
+				
+			</div>
+			
+			</li>
+		</ul>
+		</div>
+		
+		
+	</div>
+</body>
+</html>
