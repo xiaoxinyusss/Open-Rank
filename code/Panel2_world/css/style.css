@@ -56,10 +56,10 @@ i{font-style: normal;}
 .head {
   position: relative;
   height: 90px;
-  margin: 0 15px;
+  margin: 0 0cqi;
   padding-right: 60px;
   background: url(../images/head_bg.png) no-repeat center center;
-  background-size: 110% auto;
+  background-size: 120% 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
