@@ -335,114 +335,121 @@ option2 = {
 	]
 };
 option3 = {
-    //  backgroundColor: '#00265f',
-      tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-              type: 'shadow'
-          }
-      },
-      legend: {
-          data: ['2017年', '2018年'],
-          top:'5%',
-          textStyle: {
-              color: "#fff",
-              fontSize: '12',
-  
-          },
-   
-          itemGap: 35
-      },
-      grid: {
-          left: '0%',
-          top:'40px',
-          right: '0%',
-          bottom: '0',
-         containLabel: true
-      },
-      xAxis: [{
-          type: 'category',
-                data: ['1月', '2月', '3月', '4月', '5月', '6月'],
-          axisLine: {
-              show: true,
-           lineStyle: {
-                  color: "rgba(255,255,255,.1)",
-                  width: 1,
-                  type: "solid"
-              },
-          },
-          axisTick: {
-              show: false,
-          },
-          axisLabel:  {
-                  interval: 0,
-                 // rotate:50,
-                  show: true,
-                  splitNumber: 5,
-                  textStyle: {
-                       color: "rgba(255,255,255,.6)",
-                      fontSize: '12',
-                  },
-              },
-      }],
-      yAxis: [{
-          type: 'value',
-          axisLabel: {
-             //formatter: '{value} %'
-              show:true,
-               textStyle: {
-                       color: "rgba(255,255,255,.6)",
-                      fontSize: '12',
-                  },
-          },
-          axisTick: {
-              show: false,
-          },
-          axisLine: {
-              show: true,
-              lineStyle: {
-                  color: "rgba(255,255,255,.1	)",
-                  width: 1,
-                  type: "solid"
-              },
-          },
-          splitLine: {
-              lineStyle: {
-                 color: "rgba(255,255,255,.1)",
-              }
-          }
-      }],
-      series: [{
-          name: '2017年',
-          type: 'line',
-   smooth: true,
-          data: [2, 6, 3, 8, 5, 8],
-  
-          itemStyle: {
-              normal: {
-                  color:'#2f89cf',
-                  opacity: 1,
-                  
-                  barBorderRadius: 5,
-              }
-          }
-      }, {
-          name: '2018年',
-          type: 'line',
-           smooth: true,
-          data: [5, 2, 6, 4, 5, 12],
-          barWidth:'15',
-         // barGap: 1,
-          itemStyle: {
-              normal: {
-                  color:'#62c98d',
-                  opacity: 1,
-                  barBorderRadius: 5,
-              }
-          }
-      },
-      ]
-  };
+    // backgroundColor: '#00265f',
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['云原生', '数据库', '人工智能'],
+        top: '5%',
+        textStyle: {
+            color: "#fff",
+            fontSize: '12',
+        },
+        itemGap: 35
+    },
+    grid: {
+        left: '0%',
+        top: '40px',
+        right: '0%',
+        bottom: '0%',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        data: ['2020Q4', '2021Q1', '2021Q2', '2021Q3', '2021Q4', '2022Q1', '2022Q2', '2022Q3', '2022Q4', '2023Q1', '2023Q2', '2023Q3', '2024Q1', '2024Q2', '2024Q3'],
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            interval: 3,  // 每三个季度显示一个标签
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+    }],
+    yAxis: [{
+        type: 'value',
+        axisLabel: {
+            //formatter: '{value} %'
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+            }
+        },
+        min: 60,  // 纵轴最小值
+        max: 180  // 纵轴最大值
+    }],
+    series: [{
+        name: '云原生',
+        type: 'line',
+        smooth: true,
+        data: [109.15, 107.72, 108.92, 109.59, 95.62, 104.93, 107.83, 110.49, 111.02, 110.91, 110.16, 108.73, 108.97, 108.19, 108.68, 106.26],
+        itemStyle: {
+            normal: {
+                color: '#2f89cf',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: '数据库',
+        type: 'line',
+        smooth: true,
+        data: [96.34, 95.92, 98.27, 102.82, 91.55, 98.41, 101.98, 105.81, 107.38, 108.36, 109.97, 109.70, 107.20, 104.36, 104.37, 102.00],
+        itemStyle: {
+            normal: {
+                color: '#62c98d',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: '人工智能',
+        type: 'line',
+        smooth: true,
+        data:[148.04, 144.80, 145.58, 149.72, 123.97, 131.93, 132.85, 134.54, 133.65, 133.76, 137.21, 130.80, 124.34, 119.56, 119.31],
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
+};
+
+
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option2);   //activity
