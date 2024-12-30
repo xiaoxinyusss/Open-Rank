@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    
     <title>GitHub 开源项目分析</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/echarts.min.js"></script>
@@ -257,11 +258,20 @@
                     </div>
                 </li>
                 <li style="width: 25%">
-                    <div class="tit01">版块标题</div>
-                    <div class="" id="">
-                        <div style="float: left; width: 50%; height: 200px" id="fb03"></div>
-                        <div style="float: left; width: 50%; height: 200px"  id="fb04"></div>
+                    <div class="tit01" style="position: relative;">
+                        网络协作图
+                        <!-- 添加 "详情>>" 链接，靠右对齐 -->
+                        <a href="network2/index.html" class="details-link">详情 >> </a>
                     </div>
+                    <div class="" id="">
+                        <div style="float: left; width: 50%; height: 0px" id="fb03"></div>
+                        <div style="float: left; width: 50%; height: 0px"  id="fb04"></div>
+                        <iframe src="network.html" 
+                                style="width: 125%; height: 250px; border: none; transform: scale(0.8); transform-origin: 0 0; 
+                                    display: block; margin: auto; overflow: hidden;">
+                        </iframe>
+                    </div>
+                    
                 </li>
             </ul>
         </div>

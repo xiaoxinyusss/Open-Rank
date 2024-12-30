@@ -1,0 +1,43 @@
+/* 页面整体背景与字体颜色 */
+body {
+  background-color: #05396d;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 页面高度充满屏幕 */
+}
+
+#graph-container {
+  width: 100%; /* 图表容器占满页面 */
+  height: 800px; /* 固定图表高度 */
+  position: relative;
+  overflow: hidden; /* 禁止滚动条 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#graph {
+  width: 100%; /* 图表宽度填满父容器 */
+  height: 100%; /* 图表高度填满父容器 */
+}
+
+/* 隐藏不需要的区域 */
+#list-details {
+  display: none; /* 隐藏右侧的Leaderboard和Details区域 */
+}
+
+#search-container {
+  display: none; /* 隐藏搜索框 */
+}
+
+.node-label {
+  fill: #ffffff !important; /* 字体颜色为纯白色 */
+  stroke: none; /* 去掉边框 */
+}
