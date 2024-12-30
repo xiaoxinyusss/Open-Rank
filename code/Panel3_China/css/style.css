@@ -95,6 +95,11 @@ table.table1 td {
 
 
 
+
+
+
+
+
 .table1 th{ border-bottom: 1px solid #407abd; font-size: 14px; text-align: center; padding: 6px 0; color: rgba(255,255,255,.8)}
 .table1 td{ border-bottom: 1px dotted#407abd;font-size: 12px; padding:6px 0;text-align: center; color: rgba(255,255,255,.6)}
 .table1 tr:last-child td{border: none;}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>堆叠柱状图</title>
+    <style>
+        /* 样式设计 */
+        .tit01 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .stacked-bar-container {
+            width: 80%;  /* 柱状图容器宽度 */
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .stacked-bar {
+            display: flex;
+            height: 30px;  /* 柱状图的高度 */
+            margin-bottom: 5px;
+        }
+
+        .bar-segment {
+            height: 100%;
+        }
+
+        .label {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        /* 如果需要调整整体布局，可以使用以下样式 */
+        li {
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li style="width: 25%">
+            <div class="tit01">问题解决持续时间堆叠柱状图</div>
+            <div class="container">
+                <!-- 第一个堆叠柱状图 -->
+                <div class="stacked-bar-container">
+                    <div class="stacked-bar" style="width: 100%;">
+                        <div class="bar-segment" style="width: 84.04%; background-color: #4caf50;"></div>
+                        <div class="bar-segment" style="width: 9.98%; background-color: #ff9800;"></div>
+                        <div class="bar-segment" style="width: 5.99%; background-color: #f44336;"></div>
+                    </div>
+                    <div class="label">Artificial Intelligence</div>
+                </div>
+                <!-- 第二个堆叠柱状图 -->
+                <div class="stacked-bar-container">
+                    <div class="stacked-bar" style="width: 100%;">
+                        <div class="bar-segment" style="width: 74.14%; background-color: #4caf50;"></div>
+                        <div class="bar-segment" style="width: 22.41%; background-color: #ff9800;"></div>
+                        <div class="bar-segment" style="width: 3.45%; background-color: #f44336;"></div>
+                    </div>
+                    <div class="label">Big Data</div>
+                </div>
+                <!-- 第三个堆叠柱状图 -->
+                <div class="stacked-bar-container">
+                    <div class="stacked-bar" style="width: 100%;">
+                        <div class="bar-segment" style="width: 72.50%; background-color: #4caf50;"></div>
+                        <div class="bar-segment" style="width: 20.00%; background-color: #ff9800;"></div>
+                        <div class="bar-segment" style="width: 7.50%; background-color: #f44336;"></div>
+                    </div>
+                    <div class="label">Block Chain</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        // 数据结构，用于存储每个领域的比例
+        const data = [
+          {
+            field: 'Artificial Intelligence',
+            percentages: [84.04, 9.98, 5.99],
+            colors: ['#4caf50', '#ff9800', '#f44336']
+          },
+          {
+            field: 'Big Data',
+            percentages: [74.14, 22.41, 3.45],
+            colors: ['#4caf50', '#ff9800', '#f44336']
+          },
+          {
+            field: 'Block Chain',
+            percentages: [72.50, 20.00, 7.50],
+            colors: ['#4caf50', '#ff9800', '#f44336']
+          }
+        ];
+
+        // 动态生成柱状图
+        function createStackedBars() {
+          // 获取容器
+          const container = document.querySelector('.container');
+          
+          // 清空容器内容
+          container.innerHTML = '';
+
+          // 遍历数据生成每个堆叠柱状图
+          data.forEach(item => {
+            const barContainer = document.createElement('div');
+            barContainer.classList.add('stacked-bar-container');
+            
+            // 创建堆叠柱状图
+            const bar = document.createElement('div');
+            bar.classList.add('stacked-bar');
+            bar.style.width = '100%';
+            
+            item.percentages.forEach((percentage, index) => {
+              const segment = document.createElement('div');
+              segment.classList.add('bar-segment');
+              segment.style.width = `${percentage}%`;
+              segment.style.backgroundColor = item.colors[index];
+              bar.appendChild(segment);
+            });
+            
+            // 将堆叠柱状图和标签添加到容器
+            barContainer.appendChild(bar);
+            const label = document.createElement('div');
+            label.classList.add('label');
+            label.textContent = item.field;
+            barContainer.appendChild(label);
+            
+            // 将柱状图容器添加到父容器
+            container.appendChild(barContainer);
+          });
+        }
+
+        // 在页面加载后生成堆叠柱状图
+        document.addEventListener('DOMContentLoaded', createStackedBars);
+    </script>
+</body>
+</html>

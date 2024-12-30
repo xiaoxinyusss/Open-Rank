@@ -5,6 +5,7 @@ $(document).ready(function() {
     // 初始化第一个图表
     echarts_4();
     echarts_31();
+    echarts_23();
     // 给按钮绑定点击事件
     $('#cloudNativeButton').on('click', function() {
         switchChart('cloud-native');
@@ -677,6 +678,7 @@ function echarts_4() {
         var myChart66 = echarts.init(document.getElementById('echart66'));
         var myChart2 = echarts.init(document.getElementById('echart3'));
         var myChart88 = echarts.init(document.getElementById('echart88'));
+        //var myChart99 = echarts.init(document.getElementById('echart99')); // 用于堆叠柱状图
 
         option = {
             tooltip: {
@@ -800,7 +802,7 @@ function echarts_4() {
             },
             ]
         };
-option2 = {
+        option2 = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -911,9 +913,9 @@ option2 = {
             }
         }
     }]
-};
+        };
 
-option3 = {
+        option3 = {
     // backgroundColor: '#00265f',
     tooltip: {
         trigger: 'axis',
@@ -1026,15 +1028,14 @@ option3 = {
             }
         }
     }]
-};
-
-
+        };
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option2);   //activity option2
         myChart66.setOption(option3); //openrank
         myChart2.setOption(option);
         myChart88.setOption(option); //柱状图
+       
         window.addEventListener("resize",function(){
             myChart.resize();
         });
@@ -1088,8 +1089,8 @@ function echarts_31() {
 	var myChart3 = echarts.init(document.getElementById('fb03'));
 	var myChart4 = echarts.init(document.getElementById('fb04')); 
 	var myChart5 = echarts.init(document.getElementById('myd1')); 
-
 	var myChart7 = echarts.init(document.getElementById('sysx')); 
+
 option = {
     tooltip: {
         trigger: 'item',
@@ -1168,7 +1169,7 @@ color: ['#62c98d', '#2f89cf', '#4cb9cf', '#e0c828','#e58c00','#eb295b'],
         }
     ]
 };
-	option3 = {
+option3 = {
     tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)",
@@ -1519,14 +1520,15 @@ option7 = {
         }
     ]
 };
+
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart2.setOption(option2);
         myChart3.setOption(option3);
         myChart4.setOption(option4);
         myChart5.setOption(option5);
- 
         myChart7.setOption(option7);
+
         window.addEventListener("resize",function(){
             myChart.resize();
             myChart7.resize();
@@ -1539,3 +1541,96 @@ option7 = {
     }
 
 
+    function echarts_23() {
+        // 初始化 Echarts 实例
+        var myChart23 = echarts.init(document.getElementById('dd23'));
+        // 配置 Echarts 图表选项
+        var option23 = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['0-15', '15-30', '30+'],
+                bottom: '10%',  // 设置图例在底部
+                orient: 'horizontal',  // 设置图例水平排列
+                textStyle: {
+                    color: '#fff',  // 设置字体颜色
+                    fontSize: 14     // 设置字体大小
+                }
+            },
+
+            grid: {
+                top: '15%',  // 微调图表的位置，向上移动
+                bottom: '25%'  // 保证图例和图表之间有足够空间
+            },
+            yAxis: {
+                type: 'category',
+                data: ['Artificial Intelligence', 'Big Data', 'Cloud Native'], // Y轴的分类
+                axisLabel: {
+                    show: true // 不显示 Y 轴标签
+                },
+                axisLine: {
+                    show: false // 不显示 Y 轴线条
+                },
+                splitLine: {
+                    show: false // 不显示 Y 轴网格线
+                }
+            },
+            xAxis: {
+                type: 'value',
+                axisLabel: {
+                    show: false // 不显示X 轴标签
+                },
+                axisLine: {
+                    show: false // 不显示 X 轴线条
+                },
+                splitLine: {
+                    show: false // 不显示 X 轴网格线
+                }
+            },
+            series: [
+                {
+                    name: '0-15',
+                    type: 'bar',
+                    stack: '问题解决',
+                    data: [84.04, 74.14, 64.82], // AI 的数据
+                    itemStyle: {
+                        color: '#2f89cf'  // AI 的颜色
+                    }
+                },
+                {
+                    name: '15-30',
+                    type: 'bar',
+                    stack: '问题解决',
+                    data: [9.98, 22.41, 23.92], // Big Data 的数据
+                    itemStyle: {
+                        color: '#62c98d'  // Big Data 的颜色
+                    }
+                },
+                {
+                    name: '30+',
+                    type: 'bar',
+                    stack: '问题解决',
+                    data: [5.99, 3.45, 11.27], // Block Chain 的数据
+                    itemStyle: {
+                        color: '#FFA500'  // Block Chain 的颜色
+                    }
+                }
+            ]
+        };
+        
+        // 将配置应用到 ECharts 实例
+        myChart23.setOption(option23);
+        
+        // 自动调整大小
+        window.addEventListener("resize", function() {
+            myChart23.resize();
+        });
+        
+    }
+    
+    // 在页面加载完成后调用函数生成 Echarts 堆叠柱状图
+    //document.addEventListener('DOMContentLoaded', echarts_23);
