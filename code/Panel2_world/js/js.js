@@ -1,8 +1,30 @@
-﻿ $(window).load(function(){$(".loading").fadeOut()})  
-$(function () {
+﻿var myChart;  // 声明全局变量
+
+$(document).ready(function() {
     echarts_1();
-echarts_4()
-echarts_31()
+    // 初始化第一个图表
+    echarts_4();
+    echarts_31();
+    // 给按钮绑定点击事件
+    $('#cloudNativeButton').on('click', function() {
+        switchChart('cloud-native');
+    });
+
+    $('#aiButton').on('click', function() {
+        switchChart('ai');
+    });
+
+    $('#databaseButton').on('click', function() {
+        switchChart('database');
+    });
+
+    $('#averageButton').on('click', function() {
+        switchChart('average');
+    });
+});
+
+
+
 function echarts_1() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('echart1'));
@@ -110,12 +132,552 @@ option = {
             myChart.resize();
         });
     }
+ 
+//配置activity切换
+// 云原生图表配置
+var cloudNativeOption = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['llvm/llvm-project', 'grafana/grafana', 'kubernetes/kubernetes', 'ClickHouse/ClickHouse', 'keycloak/keycloak	'],  // 添加折线4和折线5
+        top: '0%',
+        textStyle: {
+            color: "#fff",
+            fontSize: '10',
+        },
+        itemGap: 10
+    },
+    grid: {
+        left: '0%',
+        top: '40px',
+        right: '0%',
+        bottom: '0%',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        data: ['202312', '202401', '202402', '202403', '202404', '202405', '202406', '202407', '202408', '202409', '202410', '202411'],
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            interval: 1,  // 每个标签都显示
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+    }],
+    yAxis: [{
+        type: 'value',
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+            }
+        },
+        min: 600,  // 纵轴最小值
+        max: 5500  // 纵轴最大值
+    }],
+    series: [{
+        name: 'llvm/llvm-project',
+        type: 'line',
+        smooth: true,
+        data: [3712.05, 4733.47, 4311.16, 4805.10, 4789.38, 4863.77, 4635.97, 5168.52, 5135.21, 4841.52, 5072.69, 4766.16],  
+        itemStyle: {
+            normal: {
+                color: '#2f89cf',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'grafana/grafana',
+        type: 'line',
+        smooth: true,
+        data: [1200.89, 1812.85, 1839.79, 1654.97, 1588.21, 1533.28, 1475.13, 1605.69, 1537.50, 1447.98, 1611.32, 1534.07],  
+        itemStyle: {
+            normal: {
+                color: '#62c98d',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'kubernetes/kubernetes',
+        type: 'line',
+        smooth: true,
+        data:[963.48, 1301.36, 1356.98, 1300.72, 1319.84, 1381.97, 1363.52, 1550.42, 1299.59, 1480.92, 1620.57, 1302.28], 
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'ClickHouse/ClickHouse',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [925.01, 1064.36, 1022.43, 1185.27, 1109.42, 1210.63, 1081.46, 1297.51, 1261.23, 1012.56, 1083.74, 1032.56],
+        itemStyle: {
+            normal: {
+                color: '#9b59b6',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'keycloak/keycloak',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [636.87, 840.16, 794.50, 855.32, 841.89, 802.49, 853.73, 834.91, 725.78, 775.24, 984.08, 788.08],
+        itemStyle: {
+            normal: {
+                color: '#e74c3c',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
+};
+
+// 人工智能图表配置
+var aiOption = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['pytorch/pytorch', 'langchain-ai/langchain', 'vllm-project/vllm', 'huggingface/transformers', 'ggerganov/llama.cpp'], 
+        top: '0%',
+        textStyle: {
+            color: "#fff",
+            fontSize: '10',
+        },
+        itemGap: 10
+    },
+    grid: {
+        left: '0%',
+        top: '40px',
+        right: '0%',
+        bottom: '0%',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        data: ['202312', '202401', '202402', '202403', '202404', '202405', '202406', '202407', '202408', '202409', '202410', '202411'],
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            interval: 1,  // 每个标签都显示
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+    }],
+    yAxis: [{
+        type: 'value',
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+            }
+        },
+        min: 500,  // 纵轴最小值
+        max: 3000  // 纵轴最大值
+    }],
+    series: [{
+        name: 'pytorch/pytorch',
+        type: 'line',
+        smooth: true,
+        data: [2020.71, 2257.89, 2429.07, 2453.79, 2536.57, 2585.83, 2557.17, 2648.74, 2845.89, 2445.42, 2629.82, 2486.86],  
+        itemStyle: {
+            normal: {
+                color: '#2f89cf',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'langchain-ai/langchain',
+        type: 'line',
+        smooth: true,
+        data: [1766.43, 1922.47, 1792.93, 1906.65, 1527.27, 1472.22, 1517.86, 1451.41, 1117.90, 1080.45, 1021.36, 856.23],  
+        itemStyle: {
+            normal: {
+                color: '#62c98d',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'vllm-project/vllm',
+        type: 'line',
+        smooth: true,
+        data:[893.04, 883.06, 909.45, 1226.46, 1362.67, 1243.66, 1443.86, 1861.39, 1973.03, 1724.16, 1772.42, 1600.35], 
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'huggingface/transformers',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [1056.89, 1225.94, 1148.23, 1294.57, 1212.06, 1155.16, 1094.84, 1297.69, 1387.58, 1239.29, 1382.78, 1038.52],
+        itemStyle: {
+            normal: {
+                color: '#9b59b6',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'ggerganov/llama.cpp',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [914.11, 929.78, 955.78, 1000.29, 1151.05, 1158.02, 910.40, 994.85, 794.01, 706.53, 597.75, 669.85],
+        itemStyle: {
+            normal: {
+                color: '#e74c3c',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
+};
+
+// 数据库图表配置
+var databaseOption = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['ClickHouse/ClickHouse', 'apache/doris', 'elastic/elasticsearch', 'StarRocks/starrocks', 'cockroachdb/cockroach'],  // 添加折线4和折线5
+        top: '0%',
+        textStyle: {
+            color: "#fff",
+            fontSize: '10',
+        },
+        itemGap: 10
+    },
+    grid: {
+        left: '0%',
+        top: '40px',
+        right: '0%',
+        bottom: '0%',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        data: ['202312', '202401', '202402', '202403', '202404', '202405', '202406', '202407', '202408', '202409', '202410', '202411'],
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            interval: 1,  // 每个标签都显示
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+    }],
+    yAxis: [{
+        type: 'value',
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+            }
+        },
+        min: 500,  // 纵轴最小值
+        max: 1400  // 纵轴最大值
+    }],
+    series: [{
+        name: 'ClickHouse/ClickHouse',
+        type: 'line',
+        smooth: true,
+        data: [925.01,1064.36,1022.43,1185.27,1109.42,1210.63,1081.46,1297.51,1261.23,1012.56,1083.74,1032.56],  
+        itemStyle: {
+            normal: {
+                color: '#2f89cf',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'apache/doris',
+        type: 'line',
+        smooth: true,
+        data: [1180.28,1176.66,967.18,1220.62,1095.81,1100.97,1075.42,1187.61,1139.48,982.63,930.21,1071.15],  
+        itemStyle: {
+            normal: {
+                color: '#62c98d',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: 'elastic/elasticsearch',
+        type: 'line',
+        smooth: true,
+        data:[832.03,1005.34,842.52,961.57,994.17,1020.55,947.47,970.51,926.16,1068.54,1362.86,1178.26], 
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'StarRocks/starrocks',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [990.71,1078.22,803.09,855.04,824.65,790.18,676.78,819.68,737.65,652.07,619.57,592.66],
+        itemStyle: {
+            normal: {
+                color: '#9b59b6',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    },
+    {
+        name: 'cockroachdb/cockroach',  // 新添加的折线
+        type: 'line',
+        smooth: true,
+        data: [663.53,651.48,633.35,708.95,715.52,691.79,708.40,765.14,785.87,759.96,878.41,814.89],
+        itemStyle: {
+            normal: {
+                color: '#e74c3c',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
+};
+
+
+// 均值对比图表配置
+var averageOption = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['云原生', '数据库', '人工智能'],
+        top: '5%',
+        textStyle: {
+            color: "#fff",
+            fontSize: '12',
+        },
+        itemGap: 35
+    },
+    grid: {
+        left: '0%',
+        top: '40px',
+        right: '0%',
+        bottom: '0%',
+        containLabel: true
+    },
+    xAxis: [{
+        type: 'category',
+        data: ['202312', '202401', '202402', '202403', '202404', '202405', '202406', '202407', '202408', '202409', '202410', '202411'],
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            interval: 1,  // 每两个月显示一个标签
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+    }],
+    yAxis: [{
+        type: 'value',
+        axisLabel: {
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLine: {
+            show: true,
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+                width: 1,
+                type: "solid"
+            },
+        },
+        splitLine: {
+            lineStyle: {
+                color: "rgba(255,255,255,.1)",
+            }
+        },
+        min: 60,  // 纵轴最小值
+        max: 180  // 纵轴最大值
+    }],
+    series: [{
+        name: '云原生',
+        type: 'line',
+        smooth: true,
+        data: [103.87, 125.48, 115.56, 121.59, 122.75, 122.04, 115.46, 121.50, 117.08, 113.94, 119.41, 107.42],
+        itemStyle: {
+            normal: {
+                color: '#2f89cf',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: '数据库',
+        type: 'line',
+        smooth: true,
+        data: [96.02, 107.09, 98.18, 110.60, 106.30, 105.50, 100.08, 107.45, 104.74, 103.41, 104.10, 96.84],
+        itemStyle: {
+            normal: {
+                color: '#62c98d',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }, {
+        name: '人工智能',
+        type: 'line',
+        smooth: true,
+        data:[116.09, 127.05, 113.56, 131.17, 121.87, 115.60, 109.68, 118.48, 113.29, 102.13, 103.05, 94.27],
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
+};
+
+
+
 function echarts_4() {
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('echart4'));
+        myChart = echarts.init(document.getElementById('echart4'));
         var myChart66 = echarts.init(document.getElementById('echart66'));
         var myChart2 = echarts.init(document.getElementById('echart3'));
         var myChart88 = echarts.init(document.getElementById('echart88'));
+
 option = {
     tooltip: {
         trigger: 'axis',
@@ -226,7 +788,6 @@ option = {
 	]
 };
 option2 = {
-  //  backgroundColor: '#00265f',
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -234,29 +795,27 @@ option2 = {
         }
     },
     legend: {
-        data: ['2017年', '2018年'],
-		top:'5%',
+        data: ['云原生', '数据库', '人工智能'],
+        top: '5%',
         textStyle: {
             color: "#fff",
-		    fontSize: '12',
-
+            fontSize: '12',
         },
- 
         itemGap: 35
     },
     grid: {
         left: '0%',
-		top:'40px',
+        top: '40px',
         right: '0%',
-        bottom: '0',
-       containLabel: true
+        bottom: '0%',
+        containLabel: true
     },
     xAxis: [{
         type: 'category',
-      		data: ['1月', '2月', '3月', '4月', '5月', '6月'],
+        data: ['202312', '202401', '202402', '202403', '202404', '202405', '202406', '202407', '202408', '202409', '202410', '202411'],
         axisLine: {
             show: true,
-         lineStyle: {
+            lineStyle: {
                 color: "rgba(255,255,255,.1)",
                 width: 1,
                 type: "solid"
@@ -265,26 +824,23 @@ option2 = {
         axisTick: {
             show: false,
         },
-		axisLabel:  {
-                interval: 0,
-               // rotate:50,
-                show: true,
-                splitNumber: 5,
-                textStyle: {
- 					color: "rgba(255,255,255,.6)",
-                    fontSize: '12',
-                },
+        axisLabel: {
+            interval: 1,  // 每两个月显示一个标签
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
             },
+        },
     }],
     yAxis: [{
         type: 'value',
         axisLabel: {
-           //formatter: '{value} %'
-			show:true,
-			 textStyle: {
- 					color: "rgba(255,255,255,.6)",
-                    fontSize: '12',
-                },
+            show: true,
+            textStyle: {
+                color: "rgba(255,255,255,.6)",
+                fontSize: '12',
+            },
         },
         axisTick: {
             show: false,
@@ -292,48 +848,58 @@ option2 = {
         axisLine: {
             show: true,
             lineStyle: {
-                color: "rgba(255,255,255,.1	)",
+                color: "rgba(255,255,255,.1)",
                 width: 1,
                 type: "solid"
             },
         },
         splitLine: {
             lineStyle: {
-               color: "rgba(255,255,255,.1)",
+                color: "rgba(255,255,255,.1)",
             }
-        }
+        },
+        min: 60,  // 纵轴最小值
+        max: 180  // 纵轴最大值
     }],
     series: [{
-        name: '2017年',
+        name: '云原生',
         type: 'line',
- smooth: true,
-        data: [2, 6, 3, 8, 5, 8],
-
+        smooth: true,
+        data: [103.87, 125.48, 115.56, 121.59, 122.75, 122.04, 115.46, 121.50, 117.08, 113.94, 119.41, 107.42],
         itemStyle: {
             normal: {
-                color:'#2f89cf',
+                color: '#2f89cf',
                 opacity: 1,
-				
-				barBorderRadius: 5,
+                barBorderRadius: 5,
             }
         }
     }, {
-        name: '2018年',
+        name: '数据库',
         type: 'line',
-		 smooth: true,
-        data: [5, 2, 6, 4, 5, 12],
-		barWidth:'15',
-       // barGap: 1,
+        smooth: true,
+        data: [96.02, 107.09, 98.18, 110.60, 106.30, 105.50, 100.08, 107.45, 104.74, 103.41, 104.10, 96.84],
         itemStyle: {
             normal: {
-                color:'#62c98d',
+                color: '#62c98d',
                 opacity: 1,
-				barBorderRadius: 5,
+                barBorderRadius: 5,
             }
         }
-    },
-	]
+    }, {
+        name: '人工智能',
+        type: 'line',
+        smooth: true,
+        data:[116.09, 127.05, 113.56, 131.17, 121.87, 115.60, 109.68, 118.48, 113.29, 102.13, 103.05, 94.27],
+        itemStyle: {
+            normal: {
+                color: '#f1c40f',
+                opacity: 1,
+                barBorderRadius: 5,
+            }
+        }
+    }]
 };
+
 option3 = {
     // backgroundColor: '#00265f',
     tooltip: {
@@ -452,7 +1018,7 @@ option3 = {
 
 
         // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option2);   //activity
+        myChart.setOption(option2);   //activity option2
         myChart66.setOption(option3); //openrank
         myChart2.setOption(option);
         myChart88.setOption(option); //柱状图
@@ -460,6 +1026,48 @@ option3 = {
             myChart.resize();
         });
     }
+
+
+function switchChart(chartType) {
+    var option;
+
+    if (chartType === 'cloud-native') {
+        option = cloudNativeOption;
+    } else if (chartType === 'ai') {
+        option = aiOption;
+    } else if (chartType === 'database') {
+        option = databaseOption;
+    } else if (chartType === 'average') {
+        option = averageOption;
+    }
+
+    console.log('当前图表类型:', chartType);
+    console.log('当前图表配置:', option);
+    // 更新图表
+    if (myChart) {
+        myChart.clear();  // 清除现有图表内容
+        myChart.setOption(option);  // 设置新的图表配置
+    }
+}
+// 页面加载完后初始化
+$(document).ready(function() {
+    echarts_4();
+
+    // 为按钮绑定事件
+    $('#cloudNativeButton').on('click', function() {
+        switchChart('cloud-native');
+    });
+    $('#aiButton').on('click', function() {
+        switchChart('ai');
+    });
+    $('#databaseButton').on('click', function() {
+        switchChart('database');
+    });
+    $('#averageButton').on('click', function() {
+        switchChart('average');
+    });
+});
+
 function echarts_31() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('fb01'));
@@ -863,22 +1471,5 @@ position:function(p){   //其中p为当前鼠标的位置
  
         });
     }
-})
-
-
-
-		
-		
-		
-
-
-		
-
-
-
-
-
-
-
 
 

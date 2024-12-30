@@ -3,18 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>GitHub 开源项目分析</title>
+    <title>全球开源项目分析</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/echarts.min.js"></script>
     <script type="text/javascript" src="js/china.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
     <script type="text/javascript" src="js/Bubble.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="head clearfix">
-        <h1 class="pulll_middle">GitHub 开源项目分析</h1>
+        <h1 class="pulll_middle">全球开源项目技术趋势与影响力分析</h1>
         <div class="menu menu2 pulll_left">
             <ul>
             </ul>
@@ -135,11 +136,9 @@
 					<div class="boxnav mapc" style="height: 550px; position: relative">
 						<div class="mapnav">
 						<ul>
-							<li><div><span>数据1</span><p>40%</p></div></li>
-							<li><div><span>数据2</span><p>12%</p></div></li>
-							<li><div><span>数据3</span><p>80</p></div></li>
-							<li><div><span>数据4</span><p>124</p></div></li>
-							<li><div><span>数据5</span><p>10%</p></div></li>
+							<li><div><span>仓库总数</span><p>392001</p></div></li>
+							<li><div><span>用户总数</span><p>192540</p></div></li>
+							<li><div><span>技术领域仓库</span><p>1810</p></div></li>
 							</ul>
 						</div>
 						<div class="mapnav2">
@@ -179,7 +178,7 @@
 					<div class="tit01">不同领域仓库openrank季度平均值</div>
                     <div class="ftechart" id="echart66"></div>
                     <div class="box">
-                        <div class="tit">领域标签</div>
+                        <div class="tit">领域热度榜</div>
                         <div class="boxnav" style="height: 250px;">
                             <div style="height: 200px; float: left; width: 40%; padding: 0 5px;">
                                 <div class="tit02 text-b">热门领域榜</div>
@@ -229,21 +228,23 @@
                         <div style="float: left; width: 50%; height: 0px" id="fb01"></div><!--原高度为170-->>
                         <div style="float: left; width: 50%; height: 0px" id="fb02"></div>
                     </div>
-					<!--
-                    <div class="leidanav leidanav2">
-                        <ul class="clearfix">
-                            <li><span>总人数</span><p>128</p></li>
-                            <li><span>男职员</span><p>100</p></li>
-                            <li><span>女职员</span><p>28</p></li>
-                        </ul>
-                    </div>
-					-->
 					<div class="boxnav" id="echart88" style="height: 200px;"></div>
                 </li>
                 <li style="width: 25%">
-                    <div class="tit01">版块标题</div>
+                    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.8/dist/echarts.min.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <div class="tit01">不同领域仓库activity值</div>
+                    <!-- 按钮 -->
+                    <div class="button-group">
+                        <button id="cloudNativeButton">云原生</button>
+                        <button id="aiButton">人工智能</button>
+                        <button id="databaseButton">数据库</button>
+                        <button id="averageButton">均值对比</button>
+                    </div>
+                    <!-- 图表容器 -->
                     <div class="ftechart" id="echart4"></div>
                 </li>
+                
                 <li style="width: 25%">
                     <div class="tit01">版块标题</div>
                     <div class="" style="height: 100%; display: flex; align-items: center;">

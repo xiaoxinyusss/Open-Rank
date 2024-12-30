@@ -130,6 +130,23 @@ table.table1 td {
 
 .ftechart{height: 200px;;}
 
+.button-group {
+    margin-bottom: 10px;
+}
+
+.button-group button {
+    margin-right: 10px;
+    padding: 5px 12px;
+    background-color: #377aad;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background-color: #1c5a82;
+}
 
 
 
