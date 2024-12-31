@@ -6,8 +6,8 @@
     <title>全球开源项目分析</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/echarts.min.js"></script>
-    <script type="text/javascript" src="js/china.js"></script>
-    <script type="text/javascript" src="js/map.js"></script>
+    <script type="text/javascript"src="js/world.js"></script>
+    <script type="text/javascript" src="js/worldmap.js"></script>
     <script type="text/javascript" src="js/js.js"></script>
     <script type="text/javascript" src="js/Bubble.js"></script>
     
@@ -71,13 +71,13 @@
                                     <td>2</td>
                                     <td>llvm/llvm-project</td>
                                     <td><span class="text-b">5262.33</span></td>
-                                    <td><div class="text-s">↑5.53%</div></td>
+                                    <td><div class="text-d">↑5.53%</div></td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>home-assistant/core</td>
                                     <td><span class="text-b">3066.35</span></td>
-                                    <td><div class="text-d">↓6.67%</div></td>
+                                    <td><div class="text-s">↓6.67%</div></td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -101,7 +101,7 @@
                                     <td>7</td>
                                     <td>odoo/odoo</td>
                                     <td><span class="text-b">2640.43</span></td>
-                                    <td><div class="text-s">↑1.96%</div></td>
+                                    <td><div class="text-d">↑1.96%</div></td>
                                 </tr>
                                 <tr>
                                     <td>8</td>
@@ -113,13 +113,13 @@
                                     <td>9</td>
                                     <td>godotengine/godot</td>
                                     <td><span class="text-b">1968.68</span></td>
-                                    <td><div class="text-s">↑3.65%</div></td>
+                                    <td><div class="text-d">↑3.65%</div></td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>elastic/kibana</td>
                                     <td><span class="text-b">1849.84</span></td>
-                                    <td><div class="text-d">↓0.67%</div></td>
+                                    <td><div class="text-s">↓0.67%</div></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -146,8 +146,8 @@
 						<div class="mapnav2">
 						
 							<div class="box">
-							<div class="tit">Field趋势变化</div>
-							<div class="boxnav" style="height: 200px;" id="sysx">
+							<div class="tit">领域开源项目数量趋势</div>
+							<div class="boxnav" style="height: 170px" id="sysx">
 						</div>
 							<div class="leidanav leidanav3" style="margin-bottom: 15px;">
 						</div>
@@ -171,20 +171,21 @@
 					-->
 					<div class="boxnav" id="echart3" style="height: 0px;">
                     </div>
-					<div class="tit01">不同领域仓库openrank季度平均值</div>
+					<div class="tit01">领域仓库季度平均openrank值</div>
                     <div class="ftechart" id="echart66"></div>
                     <div class="box">
-                        <div class="tit">领域热度榜</div>
+                        <div class="tit">公司开源仓库数排行榜</div>
                         <div class="boxnav" style="height: 250px;">
                             <div style="height: 200px; float: left; width: 40%; padding: 0 5px;">
                                 <div class="tit02 text-b">热门领域榜</div>
                                 <div class="huati">
                                     <ul>
-                                        <li>1.云原生  <span class="text-s">1737</span></li>
-                                        <li>2.数据库     <span class="text-s">1240</span></li>
+                                        <li>1.云原生  <span class="text-d">1737</span></li>
+                                        <li>2.数据库     <span class="text-d">1240</span></li>
                                         <li>3.人工智能   <span class="text-d">1136</span></li>
-                                        <li>4.大数据   <span class="text-d">232</span></li>
-                                        <li>5.前端      <span class="text-d">111</span></li>
+                                        <li>4.大数据   <span class="text-s">232</span></li>
+                                        <li>5.前端      <span class="text-s">111</span></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -219,7 +220,7 @@
         <div class="box" style="padding: 20px 0;">
             <ul class="clearfix nav2 ">
                 <li style="width: 25%">
-                    <div class="tit01">不同时期三大领域Star数</div>
+                    <div class="tit01">开源项目三大领域Star数量</div>
                     <div class="">
                     </div>
                         <div style="float: left; width: 50%; height: 0px" id="fb01"></div><!--原高度为170-->>
@@ -243,10 +244,10 @@
                 <li style="width: 25%">
                     <div class="tit01">问题解决持续时间堆叠柱状图</div>
                     <div class="" style="height: 100%; display: flex; align-items: center;">
-                        <div style="float: left; width: 50%; height: 0%" class="wancheng">
+                        <div style="float: left; width: 30%; height: 0%" class="wancheng">
                         </div>
-                        <div style="float: left; width: 50%; height: 0%" id="myd1"></div>
-                        <div id="dd23" style="width: 1200%; height: 300px;"></div>
+                        <div style="float: left; width: 30%; height: 0%" id="myd1"></div>
+                        <div id="dd23" style="width: 1200%; height: 260px;"></div>
                     </div>
            
                   

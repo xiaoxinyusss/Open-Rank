@@ -1564,13 +1564,15 @@ option7 = {
 
             grid: {
                 top: '15%',  // 微调图表的位置，向上移动
-                bottom: '25%'  // 保证图例和图表之间有足够空间
+                bottom: '25%',  // 保证图例和图表之间有足够空间
+                left: '20%'  // 向右移动图表（可以调整该值，增加或减少左边距）
             },
             yAxis: {
                 type: 'category',
-                data: ['Artificial Intelligence', 'Big Data', 'Cloud Native'], // Y轴的分类
+                data: ['AI', '数据库', '云原生'], // Y轴的分类
                 axisLabel: {
-                    show: true // 不显示 Y 轴标签
+                    show: true, // 显示 Y 轴标签
+                    color: '#fff'  // 设置 Y 轴标签的字体颜色为白色
                 },
                 axisLine: {
                     show: false // 不显示 Y 轴线条
@@ -1596,7 +1598,7 @@ option7 = {
                     name: '0-15',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [84.04, 74.14, 64.82], // AI 的数据
+                    data: [84.04, 83.16, 64.82], // AI 的数据
                     itemStyle: {
                         color: '#2f89cf'  // AI 的颜色
                     }
@@ -1605,7 +1607,7 @@ option7 = {
                     name: '15-30',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [9.98, 22.41, 23.92], // Big Data 的数据
+                    data: [9.98, 13.48, 23.92], // Big Data 的数据
                     itemStyle: {
                         color: '#62c98d'  // Big Data 的颜色
                     }
@@ -1614,7 +1616,7 @@ option7 = {
                     name: '30+',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [5.99, 3.45, 11.27], // Block Chain 的数据
+                    data: [5.99, 3.37, 11.27], // Block Chain 的数据
                     itemStyle: {
                         color: '#FFA500'  // Block Chain 的颜色
                     }
@@ -1631,6 +1633,7 @@ option7 = {
         });
         
     }
+
     
     // 在页面加载完成后调用函数生成 Echarts 堆叠柱状图
     //document.addEventListener('DOMContentLoaded', echarts_23);

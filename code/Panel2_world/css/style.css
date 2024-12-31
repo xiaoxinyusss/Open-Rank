@@ -174,8 +174,8 @@ table.table1 td {
 .leidanav li:first-child{border-left: none;}
 .leidanav span{font-size: 12px; opacity: .6}
 
-.leidanav p{font-size: 18px; color: #26a6ff }
-.mapnav2{ position: absolute; left: 10px; bottom:0px; width: 40%; z-index: 10;}
+.leidanav p{font-size: 18px; color: #26a6ff}
+.mapnav2{ position: absolute; left: 10px; bottom:0px; width: 35%; z-index: 10;}
 .mapnav2 .box{}
 .ybp{width: 100%}
 .ybp li{float: left; width: 50%; height: 120px; }
