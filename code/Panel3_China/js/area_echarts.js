@@ -165,8 +165,7 @@ $.get(guangdong, function(tjJson) {
     option = {
       //  backgroundColor: '#FDF7F2',
         title: {
-       text: '业务覆盖',
-       subtext: '2016-2018年数据',
+       text: '',
         left: 'center',
 		bottom:'15%',
         textStyle: {

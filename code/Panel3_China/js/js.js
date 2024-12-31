@@ -700,7 +700,7 @@ function echarts_4() {
                 }
             },
             legend: {
-                data: ['云原生', '数据库', '人工智能'],
+                data: ['华为', '阿里巴巴', '开放麒麟'],
         
                 top:'2%',
                 textStyle: {
@@ -773,9 +773,9 @@ function echarts_4() {
                 }
             }],
             series: [{
-                name: '云原生',
+                name: '华为',
                 type: 'bar',
-                data: [68.38, 65.54, 67.74, 62.92, 68.42],
+                data: [1553, 1389, 1202, 1035, 916],
                 barWidth:'15%', //柱子宽度
                // barGap: 1, //柱子之间间距
                 itemStyle: {
@@ -786,9 +786,9 @@ function echarts_4() {
                     }
                 }
             }, {
-                name: '数据库',
+                name: '阿里巴巴',
                 type: 'bar',
-                data: [61.05, 56.27, 72.98, 68.80, 64.10],
+                data: [547, 411, 397, 347, 314],
                 barWidth:'15%',
                // barGap: 1,
                 itemStyle: {
@@ -799,9 +799,9 @@ function echarts_4() {
                     }
                 }
             },{
-                name: '人工智能',
+                name: '开放麒麟',
                 type: 'bar',
-                data: [397.87, 258.77, 236.13, 200.90, 170.605],
+                data: [1871, 2520, 2192, 2399, 3325],
                 barWidth:'15%',
                // barGap: 1,
                 itemStyle: {
@@ -1411,7 +1411,7 @@ option7 = {
     },
     xAxis: [{
         type: 'category',
-        data: ['2016', '2018', '2020', '2022', '2024'],
+        data: ['2019', '2020', '2021', '2022','2023', '2024'],
         axisLine: {
             show: true,
             lineStyle: {
@@ -1461,7 +1461,7 @@ option7 = {
         }
     }],
     legend: {
-        data: ['人工智能', '云原生', '数据库', '大数据', '前端'], // 图例项
+        data: ['华为', '阿里巴巴', '开放麒麟'], // 图例项
         textStyle: {
             color: 'rgba(255,255,255,.6)', // 图例文本颜色
             fontSize: 10,
@@ -1472,9 +1472,9 @@ option7 = {
     },
     series: [
         {
-            name: '人工智能',
+            name: '华为',
             type: 'line',
-            data: [38, 81, 156, 224, 373],
+            data: [44, 2820, 5695, 8983, 11273,12120],
             itemStyle: {
                 normal: {
                     color: '#2f89cf', // 自定义颜色
@@ -1484,9 +1484,9 @@ option7 = {
             }
         },
         {
-            name: '云原生',
+            name: '阿里巴巴',
             type: 'line',
-            data: [203, 345, 488, 565, 565],
+            data: [6, 545, 1353, 2571, 3913, 4095],
             itemStyle: {
                 normal: {
                     color: '#FF5733', // 自定义颜色
@@ -1496,9 +1496,9 @@ option7 = {
             }
         },
         {
-            name: '数据库',
+            name: '开放麒麟',
             type: 'line',
-            data: [237, 317, 388, 472, 524],
+            data: [16, 194, 377, 692, 886, 1070],
             itemStyle: {
                 normal: {
                     color: '#33FF57', // 自定义颜色
@@ -1507,30 +1507,6 @@ option7 = {
                 }
             }
         },
-        {
-            name: '大数据',
-            type: 'line',
-            data: [71, 91, 107, 115, 115],
-            itemStyle: {
-                normal: {
-                    color: '#FFD700', // 自定义颜色
-                    opacity: 1,
-                    barBorderRadius: 5,
-                }
-            }
-        },
-        {
-            name: '前端',
-            type: 'line',
-            data: [59, 86, 103, 110, 110],
-            itemStyle: {
-                normal: {
-                    color: '#8A2BE2', // 自定义颜色
-                    opacity: 1,
-                    barBorderRadius: 5,
-                }
-            }
-        }
     ]
 };
 
@@ -1577,13 +1553,15 @@ option7 = {
 
             grid: {
                 top: '15%',  // 微调图表的位置，向上移动
-                bottom: '25%'  // 保证图例和图表之间有足够空间
+                bottom: '25%',  // 保证图例和图表之间有足够空间
+                left: '20%'  // 向右移动图表（可以调整该值，增加或减少左边距）
             },
             yAxis: {
                 type: 'category',
-                data: ['Huawei', 'Alibaba', 'openKylin'], // Y轴的分类
+                data: ['华为', '阿里巴巴', '开放麒麟'], // Y轴的分类
                 axisLabel: {
-                    show: true // 不显示 Y 轴标签
+                    show: true, // 显示 Y 轴标签
+                    color: '#fff'  // 设置 Y 轴标签的字体颜色为白色
                 },
                 axisLine: {
                     show: false // 不显示 Y 轴线条
