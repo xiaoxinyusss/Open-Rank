@@ -5,10 +5,14 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box}
 *,body{padding:0px;	margin:0px;font-family: "微软雅黑";}
+body{color:#fff;font-size: 16px; background: #05396d;
+}
+/*
 body{color:#fff;font-size: 16px; background: #033c76;
     background: -webkit-radial-gradient(50% 35%, farthest-corner,#034f8e,#034987,#02366d,#002353);
     background: radial-gradient(50% 35%, farthest-corner,#034f8e,#034987,#02366d,#002353);
 }
+*/
 html,body{height: 100%;}
 li{ list-style-type:none;}
 table{}
@@ -28,10 +32,39 @@ i{font-style: normal;}
 .text-s{color: #14e144}
 .text-b{color: #07e5ff}
 
-.head{position: relative; height: 90px; margin: 0 15px; padding-right: 60px;
-    display: flex; /* 使用flex布局 */
-    align-items: center; /* 垂直方向居中对齐子元素 */
-    justify-content: space-between; /* 水平方向两端对齐，均匀分布空间 */}
+
+/* 详情链接样式 */
+.details-link {
+    display: inline-block;
+    margin-top: 3px;  /* 适当的顶部间距 */
+    text-align: right;
+    width: 100%;  /* 使其占据父容器的100%宽度 */
+    color: #fff;  /* 默认字体颜色 */
+    text-decoration: none;  /* 去除下划线 */
+    font-size: 15px;  /* 适当调整字体大小 */
+}
+
+/* 当鼠标悬停时，改变颜色 */
+.details-link:hover {
+    color: rgb(212, 165, 61);  /* 悬停时变为蓝色 */
+    text-decoration: none;  /* 保持没有下划线 */
+}
+
+
+
+
+.head {
+  position: relative;
+  height: 90px;
+  margin: 0 0cqi;
+  padding-right: 60px;
+  background: url(../images/head_bg.png) no-repeat center center;
+  background-size: 120% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .head h1{  font-size: 30px; letter-spacing: -2px; text-align: center; line-height: 90px; padding-right: 55px; color: #daf9ff;  line-height: normal; /* 恢复默认行高，避免影响布局 */
     color: #daf9ff;
     margin: 0;
@@ -46,7 +79,7 @@ i{font-style: normal;}
     }
 .head .menu li{ display: inline-block; position: relative;margin: 0 15px;}
 .head .menu li a{ display: block; font-size: 18px; color: #fff; line-height: 40px; padding: 0 15px; }
-.head .time{position: absolute; right: 0; line-height: 90px;  margin-right: 15px; /* 时间元素右边距 */
+.head .time{position: absolute; right: 0; top: -20px; line-height: 90px;  margin-right: 15px; /* 时间元素右边距 */
     white-space: nowrap; /* 防止时间文本换行 */}
 .menu li:before,
 .menu li:after{ position:absolute; width:10px; height:5px;opacity: .4; content: "";  border-top: 2px solid #02a6b5; top: -1px;border-radius: 2px;}
@@ -85,6 +118,10 @@ table.table1 td {
 .box:before{top: -1px;}
 
 .boxnav{padding: 10px;}
+.ftechart1{height: 200px;;}
+
+
+
 .nav2{}
 .nav2>li:first-child{border:none;}
 .nav2>li{float: left;border-left:1px solid rgba(7,118,181,.2); height:240px; padding: 0 10px 10px 10px;}
@@ -93,6 +130,23 @@ table.table1 td {
 
 .ftechart{height: 200px;;}
 
+.button-group {
+    margin-bottom: 10px;
+}
+
+.button-group button {
+    margin-right: 10px;
+    padding: 5px 12px;
+    background-color: #377aad;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background-color: #1c5a82;
+}
 
 
 
@@ -185,4 +239,5 @@ table.table1 td {
 .wancheng h3 i{font-size: 12px; color:#fff;}
 .yuan{padding:5px;border-radius: 100%; margin-left: 10px; border: 2px solid rgba(0,99,169,.8);}
 .yuan span{width: 60px; height: 60px; border-radius: 100%; background: rgba(0,99,169,.8); display: flex; align-items: center; justify-content: center; font-size: 20px;}
+
 

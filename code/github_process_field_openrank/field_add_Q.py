@@ -9,7 +9,7 @@ def merge_excel_files(file1, file2, output_file):
     df2 = pd.read_excel(file2)
     
     # 通过 'id' 字段将两个 DataFrame 进行合并，使用左连接
-    merged_df = pd.merge(df1, df2[['id', '2020Q3', '2021Q1', '2021Q2', '2021Q3', '2021Q4', '2022Q1', '2022Q2', '2022Q3', '2022Q4', '2023Q1', '2023Q2', '2023Q3', '2023Q4', '2024Q1', '2024Q2', '2024Q3']], on='id', how='left')
+    merged_df = pd.merge(df1, df2[['id', '2020Q4', '2021Q1', '2021Q2', '2021Q3', '2021Q4', '2022Q1', '2022Q2', '2022Q3', '2022Q4', '2023Q1', '2023Q2', '2023Q3', '2023Q4', '2024Q1', '2024Q2', '2024Q3']], on='id', how='left')
     
     # 将合并后的 DataFrame 保存到新的 Excel 文件中
     merged_df.to_excel(output_file, index=False)
@@ -25,6 +25,5 @@ output_file = 'data_field/field_add_Q.xlsx'
 # 确保目录存在
 if not os.path.exists('data_field'):
     os.makedirs('data_field')
-
 
 merge_excel_files(file1, file2, output_file)

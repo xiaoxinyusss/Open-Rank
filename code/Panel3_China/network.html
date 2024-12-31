@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Community Openrank Graph</title>
+  <link rel="stylesheet" href="network_styles.css">
+  <style>
+    /* 设置图表容器的固定大小 */
+    #graph-container {
+      width: 75%; /* 设置图表容器占页面宽度的75% */
+      height: 800px; /* 图表高度固定为800px */
+      position: relative;
+      overflow: hidden; /* 禁止滚动条 */
+      float: left; /* 使其左浮动，右侧区域会自动填充剩余空间 */
+    }
+
+    /* 图表本身 */
+    #graph {
+      width: 100%; /* 图表宽度填满父容器 */
+      height: 100%; /* 图表高度填满父容器 */
+    }
+
+    /* 右侧区域：Leaderboard 和 Details */
+    #list-details {
+      width: 25%; /* 设置右侧区域宽度为页面的25% */
+      height: 800px; /* 高度与图表相同 */
+      overflow-y: auto; /* 使右侧区域可以垂直滚动 */
+      float: left; /* 右侧区域左浮动 */
+      padding-left: 20px;
+    }
+
+    /* 右侧内容区域的样式 */
+    #list-details .bordered {
+      border: 1px solid #ccc; /* 边框样式 */
+      margin: 10px 0; /* 上下间距 */
+      padding: 10px;
+    }
+
+    /* 搜索框模块，如果需要 */
+    #search-container {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+      padding: 5px;
+    }
+
+    /* 自定义滚动条样式 */
+    #list-details {
+      /* 设置右侧内容区域的滚动条 */
+      overflow-y: scroll; /* 允许竖向滚动条 */
+    }
+
+    /* 设置滚动条的宽度 */
+    ::-webkit-scrollbar {
+      width: 12px;  /* 竖向滚动条的宽度 */
+    }
+
+    /* 设置滚动条的轨道样式 */
+    ::-webkit-scrollbar-track {
+      background: #50779e; /* 轨道颜色 */
+      border-radius: 0px; /* 圆角 */
+    }
+
+    /* 设置滚动条的滑块样式 */
+    ::-webkit-scrollbar-thumb {
+      background: #2f5275; /* 滑块颜色 */
+      border-radius: 1px; /* 圆角 */
+    }
+
+    /* 设置滑块在悬停时的颜色 */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #03264a; /* 悬停时颜色 */
+    }
+  </style>
+</head>
+<body>
+  <div id="main" class="bordered" style="width: 100%; height: 800px;">
+    <!-- 图表区域 -->
+    <div id="graph-container" class="bordered">
+      <!-- 搜索框悬浮模块 -->
+      <div id="search-container">
+        <!-- 在此添加搜索框 -->
+      </div>
+      <!-- ECharts 图表容器 -->
+      <div id="graph"></div>
+    </div>
+  </div>
+
+  <!-- 引入 ECharts 和 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://assets.codepen.io/9606223/open_digger_utils.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.3.2/echarts.min.js"></script>
+  
+  <!-- 你的脚本文件 -->
+  <script src="network_script.js"></script>
+</body>
+</html>
