@@ -18,8 +18,8 @@ function getUrlParam(param, defaultValue) {
 var container = document.getElementById('graph');
 var chart = echarts.init(container);
 var baseUrl = 'https://oss.open-digger.cn/';
-var platform = decodeURIComponent(getUrlParam('platform', 'github'));
-var repoName = decodeURIComponent(getUrlParam('repo', 'X-lab2017/open-digger'));
+var platform = decodeURIComponent(getUrlParam('platform', 'gitee'));
+var repoName = decodeURIComponent(getUrlParam('repo', 'openeuler/mugen'));
 var month = decodeURIComponent(getUrlParam('month', '202406'));
 var typeMap = new Map([['r', 'repo'], ['i', 'issue'], ['p', 'pull'], ['u', 'user']]);
 

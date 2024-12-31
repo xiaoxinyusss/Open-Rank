@@ -936,7 +936,7 @@ function echarts_4() {
         }
     },
     legend: {
-        data: ['Huawei', 'Alibaba', 'openKylin'],
+        data: ['华为', '阿里巴巴', '开放麒麟'],
         top: '5%',
         textStyle: {
             color: "#fff",
@@ -1004,7 +1004,7 @@ function echarts_4() {
         max: 30  // 纵轴最大值
     }],
     series: [{
-        name: 'Huawei',
+        name: '华为',
         type: 'line',
         smooth: true,
         data: [3.64, 3.13, 2.59, 2.76, 2.44, 2.15, 2.02, 1.96, 1.61],
@@ -1016,7 +1016,7 @@ function echarts_4() {
             }
         }
     }, {
-        name: 'Alibaba',
+        name: '阿里巴巴',
         type: 'line',
         smooth: true,
         data: [4.55, 3.21, 2.80, 2.15, 2.34, 1.59, 1.00, 0.86, 0.50],
@@ -1028,7 +1028,7 @@ function echarts_4() {
             }
         }
     }, {
-        name: 'openKylin',
+        name: '开放麒麟',
         type: 'line',
         smooth: true,
         data:[17.62, 19.76, 19.51, 20.89, 20.91, 21.74, 22.32, 24.01, 22.75]

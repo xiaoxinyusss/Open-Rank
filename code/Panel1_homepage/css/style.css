@@ -258,7 +258,9 @@ li {
   background: url(../images/yuan2-01.png) no-repeat center;
   background-size: 100%;
   text-align: center;
-  padding-top: 25%;
+  display: flex;                /* 启用flexbox */
+  justify-content: center;      /* 水平居中 */
+  align-items: center;          /* 垂直居中 */
   box-sizing: border-box;
   color: #fff;
 }
@@ -297,7 +299,9 @@ li {
   background: url(../images/yuan1-01.png) no-repeat center;
   background-size: 100%;
   text-align: center;
-  padding-top: 20%;
+  display: flex;                /* 启用flexbox */
+  justify-content: center;      /* 水平居中 */
+  align-items: center;          /* 垂直居中 */
   box-sizing: border-box;
   color: #fff;
 }
