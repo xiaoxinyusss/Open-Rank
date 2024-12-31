@@ -4,7 +4,7 @@ import pandas as pd
 
 # 异步获取仓库贡献者信息
 async def get_contributors_gitee(session, repo_name):
-    url_repo_contributors = f"https://oss.open-digger.cn/github/{repo_name}/issue_resolution_duration.json"
+    url_repo_contributors = f"https://oss.open-digger.cn/gitee/{repo_name}/issue_resolution_duration.json"
     try:
         async with session.get(url_repo_contributors) as response:
             response.raise_for_status()
@@ -26,8 +26,8 @@ def extract_quarter_data(contributors_data):
 # 异步主函数，用于批量处理多个仓库
 async def process_repositories():
     # 从 Excel 文件读取数据
-    repo_data = pd.read_excel("data/field_process.xlsx")
-    #repo_data = repo_data[:1]  # 仅处理前1行数据，去掉此行将处理整个数据集
+    repo_data = pd.read_excel("data/repo_list_gitee_company.xlsx")
+    repo_data = repo_data[:1]  # 仅处理前1行数据，去掉此行将处理整个数据集
     
     # 存储所有仓库的异步任务
     tasks = []
@@ -58,8 +58,8 @@ async def process_repositories():
     repo_data = pd.concat([repo_data, quarter_df], axis=1)
 
     # 保存为新的 Excel 文件
-    repo_data.to_excel("data/repo_field_issue_Q.xlsx", index=False)
-    print("Data has been saved to repo_field_issue_Q.xlsx")
+    repo_data.to_excel("data/repo_field_issue_Q2.xlsx", index=False)
+    print("Data has been saved to repo_field_issue_Q2.xlsx")
 
 # 异步获取和提取数据的封装函数
 async def fetch_and_extract_data(session, repo_name):

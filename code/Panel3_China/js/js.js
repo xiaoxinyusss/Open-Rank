@@ -135,8 +135,8 @@ option = {
     }
  
 //配置activity切换
-// 云原生图表配置
-var cloudNativeOption = {
+
+var hwOption = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -144,7 +144,7 @@ var cloudNativeOption = {
         }
     },
     legend: {
-        data: ['llvm/llvm-project', 'grafana/grafana', 'kubernetes/kubernetes', 'ClickHouse/ClickHouse', 'keycloak/keycloak	'],  // 添加折线4和折线5
+        data: ['src-openeuler/chromium', 'src-openeuler/ffmpeg', 'openeuler/openeuler-jenkins', 'src-openeuler/wireshark', 'mindspore/serving'],  // 添加折线4和折线5
         top: '0%',
         textStyle: {
             color: "#fff",
@@ -207,14 +207,14 @@ var cloudNativeOption = {
                 color: "rgba(255,255,255,.1)",
             }
         },
-        min: 600,  // 纵轴最小值
-        max: 5500  // 纵轴最大值
+        min: 0,  // 纵轴最小值
+        max: 50  // 纵轴最大值
     }],
     series: [{
-        name: 'llvm/llvm-project',
+        name: 'src-openeuler/chromium',
         type: 'line',
         smooth: true,
-        data: [3712.05, 4733.47, 4311.16, 4805.10, 4789.38, 4863.77, 4635.97, 5168.52, 5135.21, 4841.52, 5072.69, 4766.16],  
+        data: [13.010, 19.81, 14.34, 29.80, 9.32, 9.350, 10.31, 12.41, 13.220, 37.910000, 13.070, 7.69],  
         itemStyle: {
             normal: {
                 color: '#2f89cf',
@@ -223,10 +223,10 @@ var cloudNativeOption = {
             }
         }
     }, {
-        name: 'grafana/grafana',
+        name: 'src-openeuler/ffmpeg',
         type: 'line',
         smooth: true,
-        data: [1200.89, 1812.85, 1839.79, 1654.97, 1588.21, 1533.28, 1475.13, 1605.69, 1537.50, 1447.98, 1611.32, 1534.07],  
+        data: [4.690, 4.02, 11.84, 2.02, 18.89, 5.590, 44.03, 43.70, 23.220, 16.040000, 4.400, 11.13],  
         itemStyle: {
             normal: {
                 color: '#62c98d',
@@ -235,10 +235,10 @@ var cloudNativeOption = {
             }
         }
     }, {
-        name: 'kubernetes/kubernetes',
+        name: 'openeuler/openeuler-jenkins',
         type: 'line',
         smooth: true,
-        data:[963.48, 1301.36, 1356.98, 1300.72, 1319.84, 1381.97, 1363.52, 1550.42, 1299.59, 1480.92, 1620.57, 1302.28], 
+        data:[13.050, 19.76, 9.16, 11.24, 18.82, 7.410, 5.96, 19.93, 26.330, 9.880000, 6.450, 12.23], 
         itemStyle: {
             normal: {
                 color: '#f1c40f',
@@ -248,10 +248,10 @@ var cloudNativeOption = {
         }
     },
     {
-        name: 'ClickHouse/ClickHouse',  // 新添加的折线
+        name: 'src-openeuler/wireshark',  // 新添加的折线
         type: 'line',
         smooth: true,
-        data: [925.01, 1064.36, 1022.43, 1185.27, 1109.42, 1210.63, 1081.46, 1297.51, 1261.23, 1012.56, 1083.74, 1032.56],
+        data: [2.740, 16.73, 6.32, 14.54, 3.90, 18.010, 4.30, 3.19, 18.970, 9.050000, 26.620, 12.94],
         itemStyle: {
             normal: {
                 color: '#9b59b6',
@@ -261,10 +261,10 @@ var cloudNativeOption = {
         }
     },
     {
-        name: 'keycloak/keycloak',  // 新添加的折线
+        name: 'mindspore/serving',  // 新添加的折线
         type: 'line',
         smooth: true,
-        data: [636.87, 840.16, 794.50, 855.32, 841.89, 802.49, 853.73, 834.91, 725.78, 775.24, 984.08, 788.08],
+        data: [20.110, 29.55, 11.73, 21.89, 2.47, 9.110, 2.68, 4.75, 5.370, 6.260000, 12.720, 9.57],
         itemStyle: {
             normal: {
                 color: '#e74c3c',
@@ -275,8 +275,8 @@ var cloudNativeOption = {
     }]
 };
 
-// 人工智能图表配置
-var aiOption = {
+
+var alOption = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -284,7 +284,13 @@ var aiOption = {
         }
     },
     legend: {
-        data: ['pytorch/pytorch', 'langchain-ai/langchain', 'vllm-project/vllm', 'huggingface/transformers', 'ggerganov/llama.cpp'], 
+        data: [
+            'anolis-challenge/summer2022',
+            'src-openeuler/buildah',
+            'src-openeuler/libtiff',
+            'src-openeuler/python-jwcrypto',
+            'src-openeuler/git-lfs'
+        ],
         top: '0%',
         textStyle: {
             color: "#fff",
@@ -347,14 +353,14 @@ var aiOption = {
                 color: "rgba(255,255,255,.1)",
             }
         },
-        min: 500,  // 纵轴最小值
-        max: 3000  // 纵轴最大值
+        min: 0,  // 纵轴最小值
+        max: 50  // 纵轴最大值
     }],
     series: [{
-        name: 'pytorch/pytorch',
+        name: 'anolis-challenge/summer2022',
         type: 'line',
         smooth: true,
-        data: [2020.71, 2257.89, 2429.07, 2453.79, 2536.57, 2585.83, 2557.17, 2648.74, 2845.89, 2445.42, 2629.82, 2486.86],  
+        data:  [9.500, 8.55, 15.10, 42.03, 48.18, 13.230, 12.95, 14.44, 12.520, 9.720000, 11.750, 16.50],  
         itemStyle: {
             normal: {
                 color: '#2f89cf',
@@ -363,10 +369,10 @@ var aiOption = {
             }
         }
     }, {
-        name: 'langchain-ai/langchain',
+        name: 'src-openeuler/buildah',
         type: 'line',
         smooth: true,
-        data: [1766.43, 1922.47, 1792.93, 1906.65, 1527.27, 1472.22, 1517.86, 1451.41, 1117.90, 1080.45, 1021.36, 856.23],  
+        data: [13.375, 8.61, 11.30, 11.24, 16.14, 7.625, 4.25, 1.95, 3.380, 6.963333, 3.970, 1.81],  
         itemStyle: {
             normal: {
                 color: '#62c98d',
@@ -375,10 +381,10 @@ var aiOption = {
             }
         }
     }, {
-        name: 'vllm-project/vllm',
+        name: 'src-openeuler/libtiff',
         type: 'line',
         smooth: true,
-        data:[893.04, 883.06, 909.45, 1226.46, 1362.67, 1243.66, 1443.86, 1861.39, 1973.03, 1724.16, 1772.42, 1600.35], 
+        data:[16.490, 5.31, 0.72, 2.77, 3.50, 12.240, 2.90, 14.70, 20.640, 6.070000, 2.758, 1.43], 
         itemStyle: {
             normal: {
                 color: '#f1c40f',
@@ -388,10 +394,10 @@ var aiOption = {
         }
     },
     {
-        name: 'huggingface/transformers',  // 新添加的折线
+        name: 'src-openeuler/python-jwcrypto',  // 新添加的折线
         type: 'line',
         smooth: true,
-        data: [1056.89, 1225.94, 1148.23, 1294.57, 1212.06, 1155.16, 1094.84, 1297.69, 1387.58, 1239.29, 1382.78, 1038.52],
+        data: [2.220, 1.78, 7.64, 4.64, 6.67, 4.230, 2.97, 2.67, 2.020, 3.970000, 1.950, 0.72],
         itemStyle: {
             normal: {
                 color: '#9b59b6',
@@ -401,7 +407,7 @@ var aiOption = {
         }
     },
     {
-        name: 'ggerganov/llama.cpp',  // 新添加的折线
+        name: 'src-openeuler/git-lfs',  // 新添加的折线
         type: 'line',
         smooth: true,
         data: [914.11, 929.78, 955.78, 1000.29, 1151.05, 1158.02, 910.40, 994.85, 794.01, 706.53, 597.75, 669.85],
@@ -415,8 +421,8 @@ var aiOption = {
     }]
 };
 
-// 数据库图表配置
-var databaseOption = {
+
+var qlOption = {
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -424,7 +430,13 @@ var databaseOption = {
         }
     },
     legend: {
-        data: ['ClickHouse/ClickHouse', 'apache/doris', 'elastic/elasticsearch', 'StarRocks/starrocks', 'cockroachdb/cockroach'],  // 添加折线4和折线5
+        data: [
+            'openharmony/security_selinux_adapter',
+            'anolis-challenge/activity-school',
+            'openeuler/mugen',
+            'openeuler/docs',
+            'opengauss/docs'
+        ],
         top: '0%',
         textStyle: {
             color: "#fff",
@@ -487,14 +499,14 @@ var databaseOption = {
                 color: "rgba(255,255,255,.1)",
             }
         },
-        min: 500,  // 纵轴最小值
-        max: 1400  // 纵轴最大值
+        min: 0,  // 纵轴最小值
+        max: 2100  // 纵轴最大值
     }],
     series: [{
-        name: 'ClickHouse/ClickHouse',
+        name: 'openharmony/security_selinux_adapter',
         type: 'line',
         smooth: true,
-        data: [925.01,1064.36,1022.43,1185.27,1109.42,1210.63,1081.46,1297.51,1261.23,1012.56,1083.74,1032.56],  
+        data: [389.490, 326.67, 215.89, 359.77, 334.02, 486.040, 376.85, 513.94, 402.220, 425.550000, 391.090, 313.85],  
         itemStyle: {
             normal: {
                 color: '#2f89cf',
@@ -503,10 +515,10 @@ var databaseOption = {
             }
         }
     }, {
-        name: 'apache/doris',
+        name: 'anolis-challenge/activity-school',
         type: 'line',
         smooth: true,
-        data: [1180.28,1176.66,967.18,1220.62,1095.81,1100.97,1075.42,1187.61,1139.48,982.63,930.21,1071.15],  
+        data: [15.090, 8.51, 53.13, 994.17, 2078.66, 51.110, 45.57, 5.51, 40.805, 8.060000, 46.540, 48.57], 
         itemStyle: {
             normal: {
                 color: '#62c98d',
@@ -515,10 +527,10 @@ var databaseOption = {
             }
         }
     }, {
-        name: 'elastic/elasticsearch',
+        name: 'openeuler/mugen',
         type: 'line',
         smooth: true,
-        data:[832.03,1005.34,842.52,961.57,994.17,1020.55,947.47,970.51,926.16,1068.54,1362.86,1178.26], 
+        data:[147.500, 150.87, 143.94, 400.44, 260.67, 198.560, 153.21, 228.51, 174.040, 134.150000, 115.330, 88.18],
         itemStyle: {
             normal: {
                 color: '#f1c40f',
@@ -528,10 +540,10 @@ var databaseOption = {
         }
     },
     {
-        name: 'StarRocks/starrocks',  // 新添加的折线
+        name: 'openeuler/docs',  // 新添加的折线
         type: 'line',
         smooth: true,
-        data: [990.71,1078.22,803.09,855.04,824.65,790.18,676.78,819.68,737.65,652.07,619.57,592.66],
+        data:[496.850, 232.76, 113.38, 120.28, 166.04, 163.090, 181.20, 118.44, 95.260, 165.210000, 80.790, 130.83],
         itemStyle: {
             normal: {
                 color: '#9b59b6',
@@ -541,10 +553,10 @@ var databaseOption = {
         }
     },
     {
-        name: 'cockroachdb/cockroach',  // 新添加的折线
+        name: 'opengauss/docs',  // 新添加的折线
         type: 'line',
         smooth: true,
-        data: [663.53,651.48,633.35,708.95,715.52,691.79,708.40,765.14,785.87,759.96,878.41,814.89],
+        data: [158.670, 129.47, 98.45, 197.00, 90.17, 101.020, 148.41, 178.07, 173.700, 313.480000, 154.000, 151.07],
         itemStyle: {
             normal: {
                 color: '#e74c3c',
@@ -557,7 +569,7 @@ var databaseOption = {
 
 
 // 均值对比图表配置
-var averageOption = {
+var averageOption ={
     tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -565,7 +577,7 @@ var averageOption = {
         }
     },
     legend: {
-        data: ['云原生', '数据库', '人工智能'],
+        data: ['华为', '阿里巴巴', '开放麒麟'],
         top: '5%',
         textStyle: {
             color: "#fff",
@@ -628,14 +640,14 @@ var averageOption = {
                 color: "rgba(255,255,255,.1)",
             }
         },
-        min: 60,  // 纵轴最小值
-        max: 180  // 纵轴最大值
+        min: 0,  // 纵轴最小值
+        max: 30  // 纵轴最大值
     }],
     series: [{
-        name: '云原生',
+        name: '华为',
         type: 'line',
         smooth: true,
-        data: [103.87, 125.48, 115.56, 121.59, 122.75, 122.04, 115.46, 121.50, 117.08, 113.94, 119.41, 107.42],
+        data: [5.85,5.04,4.56,6.40,6.37,5.83,5.73,5.24,5.69,5.79,4.71,4.62],
         itemStyle: {
             normal: {
                 color: '#2f89cf',
@@ -644,10 +656,10 @@ var averageOption = {
             }
         }
     }, {
-        name: '数据库',
+        name: '阿里巴巴',
         type: 'line',
         smooth: true,
-        data: [96.02, 107.09, 98.18, 110.60, 106.30, 105.50, 100.08, 107.45, 104.74, 103.41, 104.10, 96.84],
+        data: [8.61,5.33,5.99,12.05,12.06,7.24,5.10,5.90,7.05,4.73,4.22,3.57],
         itemStyle: {
             normal: {
                 color: '#62c98d',
@@ -656,10 +668,10 @@ var averageOption = {
             }
         }
     }, {
-        name: '人工智能',
+        name: '开放麒麟',
         type: 'line',
         smooth: true,
-        data:[116.09, 127.05, 113.56, 131.17, 121.87, 115.60, 109.68, 118.48, 113.29, 102.13, 103.05, 94.27],
+        data:[24.58,20.36,16.50,25.34,29.31,25.39,24.14,26.76,28.47,28.53,24.71,27.46],
         itemStyle: {
             normal: {
                 color: '#f1c40f',
@@ -668,7 +680,7 @@ var averageOption = {
             }
         }
     }]
-};
+        };
 
 
 
@@ -810,7 +822,7 @@ function echarts_4() {
         }
     },
     legend: {
-        data: ['云原生', '数据库', '人工智能'],
+        data: ['华为', '阿里巴巴', '开放麒麟'],
         top: '5%',
         textStyle: {
             color: "#fff",
@@ -873,14 +885,14 @@ function echarts_4() {
                 color: "rgba(255,255,255,.1)",
             }
         },
-        min: 60,  // 纵轴最小值
-        max: 180  // 纵轴最大值
+        min: 0,  // 纵轴最小值
+        max: 30  // 纵轴最大值
     }],
     series: [{
-        name: '云原生',
+        name: '华为',
         type: 'line',
         smooth: true,
-        data: [103.87, 125.48, 115.56, 121.59, 122.75, 122.04, 115.46, 121.50, 117.08, 113.94, 119.41, 107.42],
+        data: [5.85,5.04,4.56,6.40,6.37,5.83,5.73,5.24,5.69,5.79,4.71,4.62],
         itemStyle: {
             normal: {
                 color: '#2f89cf',
@@ -889,10 +901,10 @@ function echarts_4() {
             }
         }
     }, {
-        name: '数据库',
+        name: '阿里巴巴',
         type: 'line',
         smooth: true,
-        data: [96.02, 107.09, 98.18, 110.60, 106.30, 105.50, 100.08, 107.45, 104.74, 103.41, 104.10, 96.84],
+        data: [8.61,5.33,5.99,12.05,12.06,7.24,5.10,5.90,7.05,4.73,4.22,3.57],
         itemStyle: {
             normal: {
                 color: '#62c98d',
@@ -901,10 +913,10 @@ function echarts_4() {
             }
         }
     }, {
-        name: '人工智能',
+        name: '开放麒麟',
         type: 'line',
         smooth: true,
-        data:[116.09, 127.05, 113.56, 131.17, 121.87, 115.60, 109.68, 118.48, 113.29, 102.13, 103.05, 94.27],
+        data:[24.58,20.36,16.50,25.34,29.31,25.39,24.14,26.76,28.47,28.53,24.71,27.46],
         itemStyle: {
             normal: {
                 color: '#f1c40f',
@@ -1046,12 +1058,12 @@ function echarts_4() {
 function switchChart(chartType) {
     var option;
 
-    if (chartType === 'cloud-native') {
-        option = cloudNativeOption;
-    } else if (chartType === 'ai') {
-        option = aiOption;
-    } else if (chartType === 'database') {
-        option = databaseOption;
+    if (chartType === 'Huawei') {
+        option = hwOption;
+    } else if (chartType === 'Alibaba') {
+        option = alOption;
+    } else if (chartType === 'openKylin') {
+        option = qlOption;
     } else if (chartType === 'average') {
         option = averageOption;
     }
@@ -1069,14 +1081,14 @@ $(document).ready(function() {
     echarts_4();
 
     // 为按钮绑定事件
-    $('#cloudNativeButton').on('click', function() {
-        switchChart('cloud-native');
+    $('#hwButton').on('click', function() {
+        switchChart('Huawei');
     });
-    $('#aiButton').on('click', function() {
-        switchChart('ai');
+    $('#alButton').on('click', function() {
+        switchChart('Alibaba');
     });
-    $('#databaseButton').on('click', function() {
-        switchChart('database');
+    $('#qlButton').on('click', function() {
+        switchChart('openKylin');
     });
     $('#averageButton').on('click', function() {
         switchChart('average');
@@ -1554,7 +1566,7 @@ option7 = {
                 }
             },
             legend: {
-                data: ['0-15', '15-30', '30+'],
+                data: ['0-5', '5-10', '10+'],
                 bottom: '10%',  // 设置图例在底部
                 orient: 'horizontal',  // 设置图例水平排列
                 textStyle: {
@@ -1569,7 +1581,7 @@ option7 = {
             },
             yAxis: {
                 type: 'category',
-                data: ['Artificial Intelligence', 'Big Data', 'Cloud Native'], // Y轴的分类
+                data: ['Huawei', 'Alibaba', 'openKylin'], // Y轴的分类
                 axisLabel: {
                     show: true // 不显示 Y 轴标签
                 },
@@ -1594,30 +1606,30 @@ option7 = {
             },
             series: [
                 {
-                    name: '0-15',
+                    name: '0-5',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [84.04, 74.14, 64.82], // AI 的数据
+                    data: [95.42, 99.56,59.25], 
                     itemStyle: {
-                        color: '#2f89cf'  // AI 的颜色
+                        color: '#2f89cf' 
                     }
                 },
                 {
-                    name: '15-30',
+                    name: '5-10',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [9.98, 22.41, 23.92], // Big Data 的数据
+                    data: [1.28, 0.17, 14.95], 
                     itemStyle: {
-                        color: '#62c98d'  // Big Data 的颜色
+                        color: '#62c98d'  
                     }
                 },
                 {
-                    name: '30+',
+                    name: '10+',
                     type: 'bar',
                     stack: '问题解决',
-                    data: [5.99, 3.45, 11.27], // Block Chain 的数据
+                    data: [3.3,0.27, 25.79], 
                     itemStyle: {
-                        color: '#FFA500'  // Block Chain 的颜色
+                        color: '#FFA500'  
                     }
                 }
             ]
