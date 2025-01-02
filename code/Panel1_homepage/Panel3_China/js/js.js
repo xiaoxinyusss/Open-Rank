@@ -775,7 +775,7 @@ function echarts_4() {
             series: [{
                 name: '华为',
                 type: 'bar',
-                data: [1553, 1389, 1202, 1035, 916],
+                data: [13.73 ,14.75  ,12.97  ,11.85  ,10.46],
                 barWidth:'15%', //柱子宽度
                // barGap: 1, //柱子之间间距
                 itemStyle: {
@@ -788,7 +788,7 @@ function echarts_4() {
             }, {
                 name: '阿里巴巴',
                 type: 'bar',
-                data: [547, 411, 397, 347, 314],
+                data: [17.92  ,15.08  ,15.04  ,12.88  ,11.04],
                 barWidth:'15%',
                // barGap: 1,
                 itemStyle: {
@@ -801,7 +801,7 @@ function echarts_4() {
             },{
                 name: '开放麒麟',
                 type: 'bar',
-                data: [1871, 2520, 2192, 2399, 3325],
+                data: [13.06 ,18.90 ,13.92 ,16.32 ,14.05],
                 barWidth:'15%',
                // barGap: 1,
                 itemStyle: {
