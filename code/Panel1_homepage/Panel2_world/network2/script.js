@@ -149,6 +149,8 @@ var setDetails = (graph, month, id) => {
 var onGraphDataLoaded = (graph, month) => {
   setLeaderboard(graph, month);
   var data = graph.data[month];
+
+  // 处理节点
   var nodes = data.nodes.map(node => {
     var id = graph.meta.nodes[node[0]][0];
     var type = typeMap.get(id[0]);
@@ -160,9 +162,14 @@ var onGraphDataLoaded = (graph, month) => {
       initialValue: node[1],
       value: node[2],
       name,
-      symbolSize: Math.log(node[2] + 1) * 10,  // Ensure size is not too small
+      symbolSize: Math.log(node[2] + 1) * 15,  // 调整节点大小
       category: type,
-    }});  
+      x: id === graph.meta.nodes[0][0] ? 0 : undefined, // 固定中心节点
+      y: id === graph.meta.nodes[0][0] ? 0 : undefined, // 固定中心节点
+    };
+  });
+
+  // 处理链接
   var links = data.links.map(link => {
     return {
       source: graph.meta.nodes[link[0]][0],
@@ -171,11 +178,11 @@ var onGraphDataLoaded = (graph, month) => {
     };
   });
 
-  // Ensure nodes of types 'issue' or 'pull' are connected to the repository node
+  // 确保 issue 和 pull 类型的节点连接到 repository 节点
   nodes.forEach(node => {
     if (node.category === 'issue' || node.category === 'pull') {
       links.push({
-        source: graph.meta.nodes[0][0],  // Repository node
+        source: graph.meta.nodes[0][0], // Repository node
         target: node.id,
         value: 0.05,
       });
@@ -193,9 +200,9 @@ var onGraphDataLoaded = (graph, month) => {
       {
         data: categories,
         textStyle: {
-          color: 'white'  // 设置图例文字颜色为白色
-        }
-      }
+          color: 'white',
+        },
+      },
     ],
     tooltip: {
       trigger: 'item',
@@ -207,26 +214,29 @@ var onGraphDataLoaded = (graph, month) => {
         layout: 'force',
         nodes,
         links,
-        categories: categories.map(c => { return { name: c }; }),
+        categories: categories.map(c => ({ name: c })),
         roam: true,
         label: {
           position: 'right',
           show: true,
-          color: 'white',  // 修改字体颜色为白色
+          color: 'white',
         },
         force: {
-          layoutAnimation: false,
-          repulsion: 300,  // 增加排斥力，使节点分布更开阔
-          gravity: 0.1,  // 添加重力将节点拉向中心
-          edgeLength: [50, 100],  // 调整边长避免节点重叠
-          friction: 0.9  // 调整摩擦力使布局更加稳定
+          repulsion: 500,  // 增加排斥力
+          gravity: 0.2,    // 中心吸引力
+          edgeLength: [100, 200], // 边的最小和最大长度
         },
-      }
-    ]
+        lineStyle: {
+          color: 'source', // 根据源节点设置连线颜色
+          width: 1,
+        },
+      },
+    ],
   };
 
   chart.setOption(option);
   chart.on('dblclick', function(params) {
     setDetails(graph, month, params.data.id);
   });
-}
+};
+
