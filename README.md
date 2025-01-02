@@ -290,8 +290,6 @@
 
 ## 第四部分：项目运行
 
- [跳转首页](Panel1_homepage\index.html) 
-
 1、首先下载/clone 本项目，得到Open-Rank文件。
 
 2、在Open-Rank\code\Panel1_homepage\文件夹下，点击index.html即可打开本项目**首页**。
@@ -303,7 +301,7 @@
  	演示如下：
 
 ![lv_0_20250102100922](OpenRank项目概述.assets/lv_0_20250102100922.gif)
-
+完整演示链接：https://www.bilibili.com/video/BV15C6qY6ERi/?spm_id_from=333.999.0.0
 
 
 ## 第五部分：改进方向
